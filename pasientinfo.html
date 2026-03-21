@@ -13,19 +13,20 @@
     <meta property="og:title" content="Priser & Viktig Info — Brobekk Legekontor">
     <meta property="og:description" content="Prisliste for attester og viktig informasjon om e-konsultasjon, reseptfornyelse og sykemelding ved Brobekk Legekontor.">
     <meta property="og:url" content="https://brobekklegekontor.no/pasientinfo.html">
-    <meta property="og:image" content="https://brobekklegekontor.no/logo.png">
+    <meta property="og:image" content="https://brobekklegekontor.no/logo-og.png">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Priser & Viktig Info — Brobekk Legekontor">
     <meta name="twitter:description" content="Prisliste for attester og viktig informasjon om e-konsultasjon, reseptfornyelse og sykemelding ved Brobekk Legekontor.">
-    <meta name="twitter:image" content="https://brobekklegekontor.no/logo.png">
+    <meta name="twitter:image" content="https://brobekklegekontor.no/logo-og.png">
     <!-- Geo & Language -->
     <meta name="geo.region" content="NO-03">
     <meta name="geo.placename" content="Oslo">
     <meta name="geo.position" content="59.9394;10.8461">
     <meta name="ICBM" content="59.9394, 10.8461">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="logo-96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo-180.png">
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -45,9 +46,24 @@
         }
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Hjem", "item": "https://brobekklegekontor.no/"},
+            {"@type": "ListItem", "position": 2, "name": "Priser"}
+        ]
+    }
+    </script>
+    <meta name="theme-color" content="#0C2340">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
     <style>
         /* ========================================
            DESIGN TOKENS
@@ -655,7 +671,7 @@
         <div class="container">
             <div class="nav-inner">
                 <a href="index.html" class="nav-logo">
-                    <img src="logo.png" alt="Brobekk Legekontor logo" class="nav-logo-mark">
+                    <img src="logo-96.png" alt="Brobekk Legekontor logo" class="nav-logo-mark" width="44" height="44" fetchpriority="high">
                     <span>Brobekk Legekontor</span>
                 </a>
 
@@ -840,7 +856,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-brand-name">
-                        <img src="logo.png" alt="Brobekk Legekontor logo" class="footer-brand-mark">
+                        <img src="logo-96.png" alt="Brobekk Legekontor logo" class="footer-brand-mark" width="36" height="36" loading="lazy">
                         Brobekk Legekontor
                     </div>
                     <p>Din fastlege i Oslo. Vi tilbyr helsetjenester av høyeste kvalitet i trygge og moderne omgivelser.</p>

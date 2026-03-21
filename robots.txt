@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+Disallow: /.claude/
+Disallow: /*.DS_Store
+
 Sitemap: https://brobekklegekontor.no/sitemap.xml
