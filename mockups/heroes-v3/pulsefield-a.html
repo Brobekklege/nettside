@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brobekk Legekontor — Tittel A (rolig)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-1:#0A1428;
+  --bg-2:#0E1C3C;
+  --ink:#ffffff;
+  --muted:rgba(255,255,255,0.62);
+  --label:rgba(255,255,255,0.55);
+  --accent:#B85A3A;
+  --accent-hover:#9c4928;
+  --accent-glow:rgba(184,90,58,0.28);
+  --green:#4ade80;
+  --line:rgba(255,255,255,0.08);
+  --line-2:rgba(255,255,255,0.12);
+  --ease:cubic-bezier(0.22,1,0.36,1);
+  --font-sans:'Geist',system-ui,sans-serif;
+  --font-mono:'Geist Mono',monospace;
+}
+:root{color-scheme:dark}
+*{margin:0;padding:0;box-sizing:border-box}
+a,.btn{touch-action:manipulation}
+html,body{overflow-x:hidden}
+body{
+  font-family:var(--font-sans);
+  background:linear-gradient(180deg,#0A1428 0%,#0E1C3C 50%,#0A1428 100%);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+.hero{position:relative;min-height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+
+/* canvas + atmosphere layers */
+#pulse{position:absolute;inset:0;z-index:0;display:block;pointer-events:none}
+.vignette{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(130% 100% at 72% 38%,transparent 30%,rgba(15,13,11,0.55) 78%,rgba(15,13,11,0.85) 100%)}
+.fade-edges{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(10,20,40,0.55) 0%,transparent 18%,transparent 82%,rgba(10,20,40,0.55) 100%)}
+
+/* nav — matches the live site (transparent "top" state over the dark hero) */
+.nav{position:relative;z-index:5}
+.nav .container{max-width:1200px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.nav .container{padding:0 40px}}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;letter-spacing:-.025em;color:#fff;transition:color .18s var(--ease)}
+.nav-logo-mark{width:36px;height:36px;object-fit:contain;transition:transform .18s var(--ease)}
+.nav-logo:hover .nav-logo-mark{transform:scale(1.06) rotate(-2deg)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{padding:8px 14px;border-radius:6px;font-size:14px;font-weight:500;letter-spacing:-.011em;position:relative;color:rgba(255,255,255,0.65);transition:color .18s var(--ease),background .18s var(--ease)}
+.nav-link:hover,.nav-link.active{color:#fff}
+.nav-link.active::after{content:'';position:absolute;bottom:-2px;left:14px;right:14px;height:1.5px;background:#fff;border-radius:2px}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-phone{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:-.01em;color:#fff;background:rgba(255,255,255,0.08);box-shadow:0 0 0 1px rgba(255,255,255,0.15);transition:background .18s var(--ease),box-shadow .18s var(--ease)}
+.nav-phone:hover{background:rgba(255,255,255,0.14);box-shadow:0 0 0 1px rgba(255,255,255,0.25)}
+.nav-phone svg{width:14px;height:14px}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;border-radius:6px}
+.nav-toggle span{display:block;width:20px;height:1.5px;border-radius:2px;background:#fff;transition:transform .18s var(--ease),opacity .18s var(--ease)}
+.nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:900px){
+  .nav-links{position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:4px;
+    padding:16px clamp(20px,5vw,40px) 24px;background:rgba(10,20,40,0.92);
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    box-shadow:0 20px 50px -20px rgba(0,0,0,0.6);
+    opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s}
+  .nav-links.open{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-link{padding:12px 14px}
+  .nav-toggle{display:flex}
+  .nav-phone span{display:none}
+  .nav-phone{padding:9px 12px}
+}
+
+/* stage layout */
+.stage{position:relative;z-index:5;flex:1;width:100%;max-width:1240px;margin:0 auto;
+  padding:clamp(24px,5vh,56px) clamp(20px,5vw,64px) clamp(40px,6vh,72px);
+  display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+@media(max-width:900px){.stage{grid-template-columns:1fr;align-items:start;gap:40px}}
+
+.content{max-width:34ch}
+h1{font-weight:600;font-size:clamp(1.8rem,2.9vw,2.7rem);line-height:1.15;letter-spacing:-.025em;
+  text-wrap:balance;margin:0}
+h1 .accent{color:var(--accent)}
+.lead{margin-top:clamp(20px,3vh,28px);font-size:clamp(1.02rem,1.4vw,1.14rem);line-height:1.6;
+  color:var(--muted);max-width:50ch}
+
+.cta{margin-top:clamp(26px,4vh,36px);display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-sans);font-weight:500;font-size:15px;
+  padding:14px 24px;border-radius:11px;cursor:pointer;min-height:48px;border:1px solid transparent;
+  transition:transform .18s var(--ease),background .25s var(--ease),box-shadow .35s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
+.btn svg{width:16px;height:16px;transition:transform .25s var(--ease)}
+.b-acc{background:var(--accent);color:#fff;box-shadow:0 16px 44px -18px var(--accent-glow)}
+.b-acc:hover{background:var(--accent-hover);box-shadow:0 22px 56px -18px var(--accent-glow)}
+.b-acc:hover svg{transform:translateX(3px)}
+.b-acc:active{transform:scale(.98)}
+.b-gh{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.b-gh:hover{border-color:var(--accent);color:#fff;background:rgba(184,90,58,0.06)}
+.b-gh:active{transform:scale(.98)}
+
+/* hours panel */
+.panel{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;
+  backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1);
+  box-shadow:0 30px 80px -40px rgba(0,0,0,0.7)}
+.panel-head{display:flex;align-items:center;gap:10px;padding:16px 20px;
+  background:rgba(255,255,255,0.035);font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--label)}
+.dot{position:relative;width:8px;height:8px;border-radius:50%;background:var(--green);flex:none}
+.dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--green);
+  animation:ping 2.4s var(--ease) infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.6}70%,100%{transform:scale(3.4);opacity:0}}
+.panel-head b{color:var(--ink);font-weight:500}
+.row{padding:15px 20px;background:rgba(255,255,255,0.022)}
+.row .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--label)}
+.row .v{margin-top:6px;font-size:15px;font-weight:500;color:var(--ink);
+  font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+
+/* orchestrated reveal */
+.r{opacity:0;transform:translateY(18px);animation:rise .9s var(--ease) forwards}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .r{opacity:1;transform:none}
+  .dot::after{display:none}
+}
+</style>
+</head>
+<body>
+<section class="hero">
+  <canvas id="pulse" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="fade-edges" aria-hidden="true"></div>
+
+  <nav class="nav nav--top" aria-label="Hovednavigasjon">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hjem" class="nav-logo">
+          <img src="../../logo-96.png" alt="Brobekk Legekontor — fastlege på Linderud Senter, Oslo" class="nav-logo-mark" width="36" height="36">
+          <span>Brobekk Legekontor</span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#hjem" class="nav-link active">Hjem</a>
+          <a href="#helsenorge" class="nav-link">Helsenorge</a>
+          <a href="#tjenester" class="nav-link">Tjenester</a>
+          <a href="#leger" class="nav-link">Leger</a>
+          <a href="../../kontakt.html" class="nav-link">Kontakt</a>
+          <a href="../../informasjon.html" class="nav-link">Informasjon</a>
+          <a href="../../pasientinfo.html" class="nav-link">Priser</a>
+        </div>
+
+        <div class="nav-right">
+          <a href="tel:22640844" class="nav-phone" aria-label="Ring oss: 22 64 08 44">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>22 64 08 44</span>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Meny" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="stage">
+    <div class="content">
+      <h1 class="r d1">Din fastlege — med omsorg, kompetanse og <span class="accent">trygghet</span>.</h1>
+      <p class="lead r d2">Brobekk Legekontor er din fastlege på Linderud Senter. Vi tilbyr allmennmedisin, e-konsultasjon, vaksiner og småkirurgi i moderne, trygge omgivelser.</p>
+      <div class="cta r d3">
+        <a href="https://tjenester.helsenorge.no/timeavtaler" class="btn b-acc">
+          Bestill time på Helsenorge
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="kontakt.html" class="btn b-gh">Kontakt oss</a>
+      </div>
+    </div>
+
+    <aside class="panel r d4" aria-label="Åpningstider og kontaktinformasjon">
+      <div class="row"><div class="k">Åpningstider</div><div class="v">Man – Fre · 08:00 – 15:00</div></div>
+      <div class="row"><div class="k">Telefontid</div><div class="v">09:00 – 11:00 · 13:00 – 14:00</div></div>
+      <div class="row"><div class="k">Adresse</div><div class="v">Linderud Senter · Plan 3</div></div>
+    </aside>
+  </div>
+</section>
+
+<script>
+(function(){
+  const canvas=document.getElementById('pulse');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ctx=canvas&&canvas.getContext&&canvas.getContext('2d');
+  if(!ctx){return;} // graceful degradation: gradient + content remain
+
+  let w=0,h=0,dpr=Math.min(devicePixelRatio||1,2);
+
+  function resize(){
+    dpr=Math.min(devicePixelRatio||1,2);
+    w=innerWidth;h=innerHeight;
+    canvas.width=Math.floor(w*dpr);
+    canvas.height=Math.floor(h*dpr);
+    canvas.style.width=w+'px';
+    canvas.style.height=h+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    if(reduce){drawStatic();}
+  }
+
+  // EKG waveform sampler — returns a vertical offset (px) for a given phase along the trace.
+  // Phase in [0,1) repeats. Mostly flat baseline with a sharp PQRST complex once per cycle.
+  function ekg(phase){
+    const p=phase-Math.floor(phase);
+    // beat window occupies ~22% of the cycle
+    if(p>0.22) return 0;
+    const u=p/0.22; // 0..1 within the beat
+    // small P bump
+    let y=0;
+    y+=Math.exp(-Math.pow((u-0.12)/0.045,2))*0.16;     // P wave
+    y+=-Math.exp(-Math.pow((u-0.40)/0.018,2))*0.18;    // Q dip
+    y+=Math.exp(-Math.pow((u-0.47)/0.022,2))*1.00;     // R spike
+    y+=-Math.exp(-Math.pow((u-0.55)/0.030,2))*0.40;    // S dip
+    y+=Math.exp(-Math.pow((u-0.78)/0.060,2))*0.30;     // T wave
+    return y;
+  }
+
+  // layered traces: distant -> foreground
+  const layers=[
+    {yFrac:0.30,amp:46,speed:34,wavelen:520,width:1.0,color:'255,255,255',alpha:0.05,lead:false},
+    {yFrac:0.66,amp:58,speed:48,wavelen:560,width:1.1,color:'184,90,58',alpha:0.10,lead:false},
+    {yFrac:0.50,amp:78,speed:64,wavelen:600,width:1.7,color:'184,90,58',alpha:0.55,lead:true}
+  ];
+
+  function drawGrid(){
+    ctx.save();
+    ctx.fillStyle='rgba(255,255,255,0.035)';
+    const gap=34,r=1.0;
+    for(let y=gap/2;y<h;y+=gap){
+      for(let x=gap/2;x<w;x+=gap){
+        ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
+      }
+    }
+    ctx.restore();
+  }
+
+  function drawTrace(L,scroll){
+    const baseY=h*L.yFrac;
+    const step=2;
+    ctx.save();
+    ctx.lineJoin='round';ctx.lineCap='round';
+    ctx.lineWidth=L.width;
+    ctx.strokeStyle='rgba('+L.color+','+L.alpha+')';
+    if(L.lead){ctx.shadowBlur=14;ctx.shadowColor='rgba(184,90,58,0.5)';}
+    ctx.beginPath();
+    for(let px=-step;px<=w+step;px+=step){
+      const phase=(px+scroll)/L.wavelen;
+      const y=baseY-ekg(phase)*L.amp;
+      if(px<=-step)ctx.moveTo(px,y);else ctx.lineTo(px,y);
+    }
+    ctx.stroke();
+    ctx.restore();
+    return baseY;
+  }
+
+  // bright leading pulse: a glowing comet riding the foreground R-spike
+  function drawPulse(L,scroll,baseY){
+    // find the px where the current beat's R-spike sits, nearest to a sweep position
+    // sweep travels left->right at the lead speed; we locate the most recent beat crest
+    const wavelen=L.wavelen;
+    // R-spike crest occurs at phase fraction ~0.47 within each cycle.
+    // Solve px for phase=(px+scroll)/wavelen = n+0.47  ->  px = n*wavelen + 0.47*wavelen - scroll
+    const off=0.47*wavelen-scroll;
+    let bestX=null,bestDist=1e9;
+    // animated sweep position across viewport
+    const t=(perfNow()/2600)%1;
+    const sweepX=t*(w+200)-100;
+    for(let n=-1;n*wavelen+off<w+wavelen;n++){
+      const x=n*wavelen+off;
+      if(x<-40||x>w+40)continue;
+      const d=Math.abs(x-sweepX);
+      if(d<bestDist){bestDist=d;bestX=x;}
+    }
+    if(bestX===null)return;
+    const phase=(bestX+scroll)/wavelen;
+    const y=baseY-ekg(phase)*L.amp;
+    // intensity fades as the sweep moves away from the crest
+    const intensity=Math.max(0,1-bestDist/(wavelen*0.5));
+
+    // comet trail behind the head
+    ctx.save();
+    ctx.lineCap='round';
+    const trailLen=70;
+    const grad=ctx.createLinearGradient(bestX-trailLen,0,bestX,0);
+    grad.addColorStop(0,'rgba(184,90,58,0)');
+    grad.addColorStop(1,'rgba(255,168,120,'+(0.55*intensity)+')');
+    ctx.strokeStyle=grad;ctx.lineWidth=2.4;
+    ctx.shadowBlur=18;ctx.shadowColor='rgba(184,90,58,'+(0.6*intensity)+')';
+    ctx.beginPath();
+    for(let px=bestX-trailLen;px<=bestX;px+=2){
+      const ph=(px+scroll)/wavelen;
+      const yy=baseY-ekg(ph)*L.amp;
+      if(px<=bestX-trailLen)ctx.moveTo(px,yy);else ctx.lineTo(px,yy);
+    }
+    ctx.stroke();
+
+    // glowing head dot + bloom
+    ctx.shadowBlur=26;ctx.shadowColor='rgba(255,150,100,'+(0.85*intensity)+')';
+    ctx.fillStyle='rgba(255,200,165,'+(0.9*intensity+0.1)+')';
+    ctx.beginPath();ctx.arc(bestX,y,2.6,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+  }
+
+  function perfNow(){return (typeof performance!=='undefined'&&performance.now)?performance.now():Date.now();}
+
+  function frame(now){
+    ctx.clearRect(0,0,w,h);
+    drawGrid();
+    for(const L of layers){
+      const scroll=(now/1000)*L.speed;
+      const baseY=drawTrace(L,scroll);
+      if(L.lead)drawPulse(L,scroll,baseY);
+    }
+    rafId=requestAnimationFrame(frame);
+  }
+
+  function drawStatic(){
+    ctx.clearRect(0,0,w,h);
+    drawGrid();
+    const L=layers[2];
+    drawTrace(L,0);
+  }
+
+  let rafId=null;
+  resize();
+  addEventListener('resize',resize,{passive:true});
+
+  if(reduce){
+    drawStatic();
+  }else{
+    rafId=requestAnimationFrame(frame);
+    // pause when tab hidden to save battery
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden){if(rafId)cancelAnimationFrame(rafId);rafId=null;}
+      else if(!rafId){rafId=requestAnimationFrame(frame);}
+    });
+  }
+})();
+
+// mobile menu toggle (matches live site behaviour)
+(function(){
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  if(!t||!l)return;
+  t.addEventListener('click',function(){
+    var open=t.classList.toggle('active');
+    l.classList.toggle('open',open);
+    t.setAttribute('aria-expanded',open);
+  });
+  l.querySelectorAll('.nav-link').forEach(function(a){
+    a.addEventListener('click',function(){t.classList.remove('active');l.classList.remove('open');t.setAttribute('aria-expanded','false');});
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brobekk Legekontor — Helsetjenester bygget på tillit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Soft wellness mesh palette — muted, sophisticated, never garish */
+  --cream:#f6f1e9;
+  --cream-2:#fbf8f2;
+  --sage:#8fae93;
+  --sage-deep:#4e6b54;
+  --sage-ink:#2f4536;
+  --sky:#a9c8d8;
+  --peach:#f0c3a8;
+  --coral:#e08a6a;
+  --coral-deep:#c96a48;
+  --ink:#27322b;          /* near-black warm green for AA text */
+  --muted:#54625a;
+  --faint:#7a8780;
+  --glass:rgba(255,255,255,0.55);
+  --glass-line:rgba(255,255,255,0.7);
+  --shadow:46px 46px 90px -50px rgba(47,69,54,0.45);
+  --spring:cubic-bezier(0.22,1,0.36,1);
+  --disp:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Plus Jakarta Sans",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--body);
+  background:var(--cream);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+h1{text-wrap:balance}
+:focus-visible{outline:3px solid var(--sage-deep);outline-offset:4px;border-radius:8px}
+
+/* ---------- MESH BACKDROP ---------- */
+.hero{position:relative;min-height:100dvh;display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
+.mesh{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:
+  radial-gradient(120% 120% at 85% 8%, #fbf8f2 0%, transparent 55%),
+  linear-gradient(165deg,#f3efe5 0%,#eef3ec 100%);
+  background-color:var(--cream);}
+.blob{position:absolute;border-radius:50%;filter:blur(64px);opacity:.85;will-change:transform;mix-blend-mode:normal}
+.b1{width:60vmax;height:60vmax;left:-14vmax;top:-18vmax;background:radial-gradient(circle at 50% 50%,#9fc0a6 0%,rgba(159,192,166,0) 68%);animation:drift1 26s ease-in-out infinite}
+.b2{width:54vmax;height:54vmax;right:-16vmax;top:-10vmax;background:radial-gradient(circle at 50% 50%,#b9d6e3 0%,rgba(185,214,227,0) 68%);animation:drift2 31s ease-in-out infinite}
+.b3{width:50vmax;height:50vmax;left:8vmax;bottom:-22vmax;background:radial-gradient(circle at 50% 50%,#f3c8ad 0%,rgba(243,200,173,0) 66%);animation:drift3 35s ease-in-out infinite}
+.b4{width:42vmax;height:42vmax;right:2vmax;bottom:-16vmax;background:radial-gradient(circle at 50% 50%,#f0e7d4 0%,rgba(240,231,212,0) 70%);animation:drift4 29s ease-in-out infinite}
+.b5{width:34vmax;height:34vmax;left:38%;top:30%;background:radial-gradient(circle at 50% 50%,#cfe0c9 0%,rgba(207,224,201,0) 70%);animation:drift5 38s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(7vmax,5vmax,0) scale(1.12)}}
+@keyframes drift2{0%,100%{transform:translate3d(0,0,0) scale(1.05)}50%{transform:translate3d(-6vmax,7vmax,0) scale(.95)}}
+@keyframes drift3{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(5vmax,-6vmax,0) scale(1.1)}}
+@keyframes drift4{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-5vmax,-4vmax,0) scale(1.08)}}
+@keyframes drift5{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-7vmax,4vmax,0) scale(1.15)}}
+
+/* film grain over the mesh */
+.grain{position:absolute;inset:-50%;z-index:1;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+/* gentle scrim so text holds AA on any mesh region */
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(115% 90% at 28% 42%,rgba(251,248,242,0.62) 0%,rgba(251,248,242,0.18) 46%,transparent 72%)}
+
+/* ---------- NAV ---------- */
+nav{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;
+  padding:24px clamp(20px,5vw,64px);
+  opacity:0;animation:fadeDown .8s var(--spring) .1s forwards}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--disp);font-weight:700;font-size:18px;letter-spacing:-.02em;color:var(--ink)}
+.bmark{width:38px;height:38px;border-radius:13px;background:linear-gradient(150deg,var(--sage) 0%,var(--sage-deep) 100%);
+  display:grid;place-items:center;color:#fff;box-shadow:0 8px 22px -10px rgba(78,107,84,0.7)}
+.bmark svg{width:20px;height:20px}
+.nlinks{display:flex;align-items:center;gap:6px}
+.nlinks a{font-size:14.5px;font-weight:500;color:var(--muted);padding:10px 15px;border-radius:11px;min-height:44px;
+  display:inline-flex;align-items:center;transition:color .2s var(--spring),background .2s var(--spring)}
+.nlinks a:hover{color:var(--ink);background:rgba(255,255,255,0.55)}
+.npill{font-weight:600;color:var(--ink)!important;background:rgba(255,255,255,0.6);border:1px solid var(--glass-line);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.npill:hover{background:#fff!important}
+@media(max-width:760px){.nlinks .lnk{display:none}}
+
+/* ---------- STAGE ---------- */
+.stage{position:relative;z-index:5;flex:1;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);
+  align-items:center;width:100%;max-width:1240px;margin:0 auto;
+  padding:clamp(24px,4vh,56px) clamp(20px,5vw,64px) clamp(40px,6vh,72px)}
+
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(3rem,7.4vw,6.4rem);line-height:.96;letter-spacing:-.035em;
+  max-width:13ch;color:var(--ink)}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.05em}
+h1 .ln>span{display:block;transform:translateY(112%);animation:rise 1s var(--spring) forwards}
+h1 .l2>span{animation-delay:.1s}
+h1 .l3>span{animation-delay:.2s}
+h1 .pop{color:var(--coral-deep);font-style:italic;font-weight:700}
+
+.lead{margin-top:30px;font-size:clamp(1.06rem,1.6vw,1.22rem);line-height:1.62;color:var(--muted);max-width:48ch;font-weight:450;
+  opacity:0;animation:fadeUp 1s var(--spring) .5s forwards}
+
+.cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp 1s var(--spring) .64s forwards}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:600;font-size:15.5px;
+  padding:16px 26px;border-radius:999px;min-height:52px;cursor:pointer;border:1px solid transparent;
+  transition:transform .2s var(--spring),box-shadow .3s var(--spring),background .25s var(--spring)}
+.btn svg{width:17px;height:17px}
+.b-solid{background:linear-gradient(150deg,var(--sage-deep) 0%,var(--sage-ink) 100%);color:var(--cream-2);
+  box-shadow:0 18px 38px -16px rgba(47,69,54,0.7)}
+.b-solid:hover{transform:translateY(-2px);box-shadow:0 24px 48px -16px rgba(47,69,54,0.78)}
+.b-solid .arr{transition:transform .25s var(--spring)}
+.b-solid:hover .arr{transform:translateX(4px)}
+.b-solid:active{transform:translateY(0) scale(.98)}
+.b-ghost{background:rgba(255,255,255,0.5);color:var(--ink);border-color:var(--glass-line);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.b-ghost:hover{background:#fff;transform:translateY(-2px)}
+.b-ghost:active{transform:translateY(0) scale(.98)}
+
+/* ---------- HOURS PANEL ---------- */
+.panel{display:flex;flex-direction:column;gap:14px}
+.card{position:relative;background:var(--glass);border:1px solid var(--glass-line);border-radius:24px;
+  padding:22px 24px;backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);
+  box-shadow:var(--shadow);
+  opacity:0;transform:translateY(22px) scale(.97);animation:cardIn .9s var(--spring) forwards}
+.card:nth-child(1){animation-delay:.6s}
+.card:nth-child(2){animation-delay:.72s}
+.card:nth-child(3){animation-delay:.84s}
+.card .top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.card .lbl{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.card .ico{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;flex:none}
+.i-hours{background:rgba(143,174,147,0.28);color:var(--sage-ink)}
+.i-phone{background:rgba(169,200,216,0.34);color:#2f5468}
+.i-pin{background:rgba(240,195,168,0.4);color:var(--coral-deep)}
+.card .ico svg{width:18px;height:18px}
+.card .val{font-family:var(--disp);font-weight:600;font-size:clamp(1.12rem,2vw,1.3rem);letter-spacing:-.02em;color:var(--ink);
+  font-variant-numeric:tabular-nums;line-height:1.25}
+.card.now{display:flex;flex-direction:row;align-items:center;gap:14px;padding:18px 24px;
+  background:linear-gradient(135deg,rgba(143,174,147,0.34),rgba(255,255,255,0.5))}
+.now .pulse{width:11px;height:11px;border-radius:50%;background:#3f9d52;flex:none;position:relative}
+.now .pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:#3f9d52;
+  animation:ping 2.4s var(--spring) infinite}
+.now .nowtxt{font-weight:600;font-size:14.5px;color:var(--sage-ink)}
+.now .nowtxt b{font-family:var(--disp);font-weight:700}
+
+/* ---------- KEYFRAMES ---------- */
+@keyframes rise{to{transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cardIn{to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes ping{0%{transform:scale(1);opacity:.6}70%,100%{transform:scale(2.6);opacity:0}}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .stage{grid-template-columns:1fr;gap:36px;align-content:center}
+  h1{max-width:16ch}
+  .panel{max-width:520px}
+}
+@media(max-width:420px){
+  nav{padding:18px 18px}
+  .stage{padding:16px 18px 36px}
+  .card{padding:18px 18px;border-radius:20px}
+  .btn{flex:1 1 auto}
+}
+
+/* ---------- REDUCED MOTION: freeze to a static, beautiful gradient ---------- */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .blob{animation:none!important}
+  h1 .ln>span{transform:none!important}
+  .lead,.cta,nav,.card{opacity:1!important;transform:none!important}
+  .now .pulse::after{display:none}
+}
+</style>
+</head>
+<body>
+<section class="hero">
+  <!-- decorative animated mesh -->
+  <div class="mesh" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="blob b4"></div>
+    <div class="blob b5"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <nav>
+    <a class="brand" href="index.html" aria-label="Brobekk Legekontor — forside">
+      <span class="bmark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21s-7-4.6-9.3-9.2C1.2 8.7 2.6 5 6 5c2 0 3.2 1.3 4 2.6C10.8 6.3 12 5 14 5c3.4 0 4.8 3.7 3.3 6.8C19 16.4 12 21 12 21z"/>
+        </svg>
+      </span>
+      Brobekk Legekontor
+    </a>
+    <div class="nlinks">
+      <a class="lnk" href="informasjon.html">Informasjon</a>
+      <a class="lnk" href="pasientinfo.html">Pasientinfo</a>
+      <a class="npill" href="kontakt.html">Kontakt</a>
+    </div>
+  </nav>
+
+  <div class="stage">
+    <div class="content">
+      <h1>
+        <span class="ln l1"><span>Helsetjenester</span></span>
+        <span class="ln l2"><span>bygget på</span></span>
+        <span class="ln l3"><span class="pop">tillit.</span></span>
+      </h1>
+      <p class="lead">Brobekk Legekontor er din fastlege på Linderud Senter. Vi tilbyr allmennmedisin, e-konsultasjon, vaksiner og småkirurgi i moderne, trygge omgivelser.</p>
+      <div class="cta">
+        <a class="btn b-solid" href="https://tjenester.helsenorge.no/timeavtaler">
+          Bestill time på Helsenorge
+          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn b-ghost" href="kontakt.html">Kontakt oss</a>
+      </div>
+    </div>
+
+    <aside class="panel" aria-label="Åpningstider og kontaktinformasjon">
+      <div class="card now">
+        <span class="pulse" aria-hidden="true"></span>
+        <span class="nowtxt"><b>Åpent nå</b> — vi tar imot pasienter</span>
+      </div>
+      <div class="card">
+        <div class="top">
+          <span class="ico i-hours" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <span class="lbl">Åpningstider</span>
+        </div>
+        <div class="val">Man&nbsp;–&nbsp;Fre · 08:00&nbsp;–&nbsp;15:00</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <span class="ico i-phone" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+          </span>
+          <span class="lbl">Telefontid</span>
+        </div>
+        <div class="val">09:00&nbsp;–&nbsp;11:00 · 13:00&nbsp;–&nbsp;14:00</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <span class="ico i-pin" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
+          </span>
+          <span class="lbl">Adresse</span>
+        </div>
+        <div class="val">Linderud Senter · Plan 3</div>
+      </div>
+    </aside>
+  </div>
+</section>
+</body>
+</html>

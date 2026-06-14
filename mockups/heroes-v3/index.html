@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brobekk — Hero v3 mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A1428; --accent:#B85A3A; --accent-hover:#9c4928;
+  --font-sans:'Geist',system-ui,-apple-system,sans-serif;
+  --font-mono:'Geist Mono',ui-monospace,monospace;
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--font-sans);
+  background:linear-gradient(180deg,#1a1815 0%,#221d18 50%,#1a1815 100%);
+  color:#fff; min-height:100vh; letter-spacing:-0.011em;
+  -webkit-font-smoothing:antialiased; padding:clamp(40px,8vw,96px) clamp(20px,5vw,64px);
+}
+.head{max-width:1100px;margin:0 auto 56px}
+.head .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.head h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:600;letter-spacing:-0.04em;line-height:1.02}
+.head p{margin-top:16px;max-width:560px;color:rgba(255,255,255,0.62);line-height:1.6}
+.grid{max-width:1100px;margin:0 auto;display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{
+  display:flex;flex-direction:column;text-decoration:none;color:#fff;
+  border-radius:16px;overflow:hidden;background:rgba(255,255,255,0.03);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.08);
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+}
+.card:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px rgba(184,90,58,0.4),0 24px 60px -24px rgba(184,90,58,0.4)}
+.card iframe{width:100%;aspect-ratio:16/10;border:0;background:#1a1815;pointer-events:none}
+.card-body{padding:22px 24px 26px}
+.card-num{font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.08em}
+.card-body h2{font-size:1.3rem;font-weight:600;letter-spacing:-0.02em;margin:6px 0 8px}
+.card-body p{font-size:0.9rem;color:rgba(255,255,255,0.58);line-height:1.55}
+.card-link{margin-top:16px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);display:inline-flex;gap:6px;align-items:center}
+.card:hover .card-link{color:#fff}
+</style>
+</head>
+<body>
+<div class="head">
+  <div class="tag">Brobekk Legekontor · Hero-konsepter</div>
+  <h1>Tre retninger for hero-seksjonen.</h1>
+  <p>Alle bygger videre på EKG-/hjerterytme-ideen, bruker Geist og kontorets terrakotta-palett. Klikk for å åpne i full skjerm.</p>
+</div>
+<div class="grid">
+  <a class="card" href="hero-1-pulsefield.html">
+    <iframe src="hero-1-pulsefield.html" title="Pulse Field" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+    <div class="card-body">
+      <span class="card-num">01 — Pulse Field</span>
+      <h2>Pulse Field</h2>
+      <p>EKG-en videreutviklet: flere lag av hjerterytme-kurver som strømmer i parallakse, med en glødende ledepuls. Den signaturen kontoret allerede elsker — tatt mye lenger.</p>
+      <span class="card-link">Åpne →</span>
+    </div>
+  </a>
+  <a class="card" href="hero-2-aurora.html">
+    <iframe src="hero-2-aurora.html" title="Aurora Vitals" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+    <div class="card-body">
+      <span class="card-num">02 — Aurora Vitals</span>
+      <h2>Aurora Vitals</h2>
+      <p>En WebGL-aurora i terrakotta og skogsgrønt som «puster» i en rolig hjerterytme på 4 sekunder. Premium og avslappet, med en tynn EKG-linje på tvers.</p>
+      <span class="card-link">Åpne →</span>
+    </div>
+  </a>
+  <a class="card" href="hero-3-constellation.html">
+    <iframe src="hero-3-constellation.html" title="Constellation of Care" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+    <div class="card-body">
+      <span class="card-num">03 — Constellation of Care</span>
+      <h2>Constellation of Care</h2>
+      <p>Et levende nettverk av noder som kobles sammen og reagerer på musen. Hvert 3,5. sekund sender et hjerteslag en ringpuls gjennom nettverket i terrakotta.</p>
+      <span class="card-link">Åpne →</span>
+    </div>
+  </a>
+</div>
+</body>
+</html>
