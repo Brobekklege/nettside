@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero 05 — Particles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#0E1A1F;--ink:#EAF2F1;--muted:#94AAAA;--accent:#46C6B8;--accent-deep:#2BA597;
+  --hair:rgba(255,255,255,.1);--ease:cubic-bezier(.16,1,.3,1);
+  --serif:"Instrument Serif",Georgia,serif;--sans:"Hanken Grotesk",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--canvas);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.tnum{font-variant-numeric:tabular-nums}
+.hero{position:relative;min-height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(70% 60% at 50% 50%,transparent 30%,rgba(14,26,31,.55) 100%)}
+#field{position:absolute;inset:0;z-index:0;display:block}
+.glow{position:absolute;width:50vw;height:50vw;border-radius:50%;background:radial-gradient(circle,rgba(70,198,184,.18),transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;filter:blur(30px);animation:pulseGlow 7s var(--ease) infinite}
+@keyframes pulseGlow{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}}
+
+nav{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:24px clamp(24px,5vw,64px)}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-size:23px;letter-spacing:0}
+.bm{width:32px;height:32px;border-radius:9px;background:rgba(70,198,184,.14);border:1px solid rgba(70,198,184,.34);display:grid;place-items:center;color:var(--accent)}
+.bm svg{width:17px;height:17px}
+.nlinks{display:flex;gap:28px}
+.nlinks a{font-size:14.5px;color:var(--muted);font-weight:500}
+.nlinks a:hover{color:var(--accent)}
+.npill{font-weight:600;font-size:14.5px;background:var(--accent);color:#04201C;padding:10px 20px;border-radius:999px;transition:transform .25s var(--ease),background .25s}
+.npill:hover{background:#5fded0;transform:translateY(-2px)}
+@media(max-width:820px){.nlinks{display:none}}
+
+.stage{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 24px 40px}
+.tag{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;letter-spacing:.04em;color:var(--accent);border:1px solid rgba(70,198,184,.3);background:rgba(70,198,184,.06);padding:7px 15px;border-radius:999px;margin-bottom:30px;opacity:0;animation:fade .8s var(--ease) .2s forwards}
+.tag .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:beat 2.4s var(--ease) infinite}
+@keyframes beat{0%,100%{box-shadow:0 0 0 4px rgba(70,198,184,.22)}50%{box-shadow:0 0 0 9px rgba(70,198,184,0)}}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(3.2rem,8.5vw,7rem);line-height:.98;letter-spacing:-.01em;max-width:15ch}
+h1 em{font-style:italic;color:var(--accent)}
+h1 span{display:inline-block;opacity:0;filter:blur(8px);transform:translateY(18px);animation:focusin 1s var(--ease) forwards}
+@keyframes focusin{to{opacity:1;filter:blur(0);transform:none}}
+.lead{margin-top:24px;font-size:1.14rem;color:var(--muted);max-width:46ch;opacity:0;animation:fade .9s var(--ease) .9s forwards}
+.cta{margin-top:34px;display:flex;gap:13px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fade .9s var(--ease) 1.05s forwards}
+@keyframes fade{to{opacity:1}}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:999px;cursor:pointer;transition:transform .25s var(--ease),box-shadow .3s,background .25s}
+.btn svg{width:16px;height:16px}
+.b-acc{background:var(--accent);color:#04201C;box-shadow:0 14px 32px -10px rgba(70,198,184,.5)}
+.b-acc:hover{background:#5fded0;transform:translateY(-2px)}
+.b-gh{background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--hair)}
+.b-gh:hover{border-color:var(--accent);color:var(--accent)}
+.hours{margin-top:42px;display:inline-flex;align-items:center;gap:22px;background:rgba(255,255,255,.04);border:1px solid var(--hair);backdrop-filter:blur(10px);padding:14px 24px;border-radius:14px;opacity:0;animation:fade 1s var(--ease) 1.2s forwards}
+.hours .h{display:flex;flex-direction:column;align-items:flex-start}
+.hours .l{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.hours .v{font-weight:600;font-size:14.5px}
+.hours .div{width:1px;height:30px;background:var(--hair)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}h1 span,.lead,.cta,.tag,.hours{opacity:1;filter:none;transform:none}#field{display:none}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <canvas id="field"></canvas>
+  <span class="glow"></span>
+  <nav>
+    <a href="#" class="brand"><span class="bm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>Brobekk Legekontor</a>
+    <div class="nlinks"><a href="#">Helsenorge</a><a href="#">Tjenester</a><a href="#">Leger</a><a href="#">Om oss</a></div>
+    <a href="#" class="npill">Bestill time</a>
+  </nav>
+  <div class="stage">
+    <span class="tag"><span class="dot"></span>FASTLEGE · LINDERUD · OSLO</span>
+    <h1><span style="animation-delay:.3s">Omtanke i</span> <span style="animation-delay:.45s"><em>hver</em></span> <span style="animation-delay:.6s">celle.</span></h1>
+    <p class="lead">Allmennmedisin levert med faglig dybde og varme — vaksiner, prøver, småkirurgi og e-konsultasjon, samlet på Linderud Senter.</p>
+    <div class="cta">
+      <a href="#" class="btn b-acc">Bestill time på Helsenorge <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <a href="#" class="btn b-gh">Kontakt oss</a>
+    </div>
+    <div class="hours">
+      <div class="h"><span class="l">Åpningstid</span><span class="v tnum">Man–Fre 08–15</span></div>
+      <span class="div"></span>
+      <div class="h"><span class="l">Telefontid</span><span class="v tnum">09–11 · 13–14</span></div>
+      <span class="div"></span>
+      <div class="h"><span class="l">Akuttimer</span><span class="v tnum">Fra 09:00</span></div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const c=document.getElementById('field'),x=c.getContext('2d');
+  let w,h,pts,dpr=Math.min(devicePixelRatio||1,2);
+  const COUNT=()=>Math.min(86,Math.floor(window.innerWidth/16));
+  function resize(){w=c.width=innerWidth*dpr;h=c.height=innerHeight*dpr;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';
+    pts=Array.from({length:COUNT()},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.22*dpr,vy:(Math.random()-.5)*.22*dpr,r:(Math.random()*1.6+.8)*dpr}));}
+  resize();addEventListener('resize',resize);
+  const LINK=130*dpr;
+  function tick(){
+    x.clearRect(0,0,w,h);
+    for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;}
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+        if(d<LINK){x.strokeStyle=`rgba(70,198,184,${(1-d/LINK)*.22})`;x.lineWidth=dpr*.6;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}
+      }
+    }
+    for(const p of pts){x.fillStyle='rgba(120,224,212,.7)';x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill();}
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>
