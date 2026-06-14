@@ -1159,6 +1159,11 @@ img, svg { max-width: 100%; display: block; }
     .about-intro { position: static; }
 }
 
+/* Trim the detailed directions paragraph on phones — full version stays on desktop */
+@media (max-width: 640px) {
+    .about-detail { display: none; }
+}
+
 /* ============================================================
    12c. FAQ SECTION
    ============================================================ */
