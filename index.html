@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brobekk Legekontor — Fastlege i Oslo</title>
-    <meta name="description" content="Brobekk Legekontor tilbyr helsetjenester av høyeste kvalitet i Oslo. Bestill time, forny resept og se din journal gjennom Helsenorge.">
+    <title>Brobekk Legekontor — Fastlege på Linderud Senter, Oslo</title>
+    <meta name="description" content="Brobekk Legekontor er din fastlege på Linderud Senter i Oslo. Bestill time, forny resept og start e-konsultasjon via Helsenorge. Allmennmedisin, vaksiner, småkirurgi og akuttimer hver dag.">
+    <meta name="keywords" content="fastlege Oslo, fastlege Linderud, legekontor Linderud, fastlege Bjerke, allmennlege Oslo, bytte fastlege Oslo, Linderud Senter lege, e-konsultasjon Oslo, vaksinering Oslo, småkirurgi Oslo, akuttime fastlege">
     <link rel="canonical" href="https://brobekklegekontor.no/">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="nb_NO">
     <meta property="og:site_name" content="Brobekk Legekontor">
-    <meta property="og:title" content="Brobekk Legekontor — Fastlege i Oslo">
-    <meta property="og:description" content="Brobekk Legekontor tilbyr helsetjenester av høyeste kvalitet i Oslo. Bestill time, forny resept og se din journal gjennom Helsenorge.">
+    <meta property="og:title" content="Brobekk Legekontor — Fastlege på Linderud Senter, Oslo">
+    <meta property="og:description" content="Din fastlege på Linderud Senter, Oslo. Bestill time, forny resept og start e-konsultasjon via Helsenorge. Allmennmedisin, vaksiner, småkirurgi og akuttimer hver dag.">
     <meta property="og:url" content="https://brobekklegekontor.no/">
     <meta property="og:image" content="https://brobekklegekontor.no/logo-og.png">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Brobekk Legekontor — Fastlege i Oslo">
-    <meta name="twitter:description" content="Brobekk Legekontor tilbyr helsetjenester av høyeste kvalitet i Oslo. Bestill time, forny resept og se din journal gjennom Helsenorge.">
+    <meta name="twitter:title" content="Brobekk Legekontor — Fastlege på Linderud Senter, Oslo">
+    <meta name="twitter:description" content="Din fastlege på Linderud Senter, Oslo. Bestill time, forny resept og start e-konsultasjon via Helsenorge.">
     <meta name="twitter:image" content="https://brobekklegekontor.no/logo-og.png">
     <!-- Geo & Language -->
     <meta name="geo.region" content="NO-03">
@@ -31,18 +32,20 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "MedicalClinic",
+        "@type": ["MedicalClinic", "LocalBusiness"],
+        "@id": "https://brobekklegekontor.no/#clinic",
         "name": "Brobekk Legekontor",
-        "description": "Brobekk Legekontor tilbyr helsetjenester av høyeste kvalitet i Oslo. Fastlege, e-konsultasjon, vaksiner og småkirurgi.",
+        "alternateName": ["Brobekk Lege", "Legekontor Linderud", "Fastlege Linderud"],
+        "description": "Brobekk Legekontor er et fastlegekontor på Linderud Senter i Oslo. Vi tilbyr allmennmedisin, e-konsultasjon, reseptfornyelse, vaksinering, småkirurgi, laboratorietjenester og spesialisthenvisning. Akuttimer åpnes kl. 09:00 hver dag.",
         "url": "https://brobekklegekontor.no/",
         "logo": "https://brobekklegekontor.no/logo-og.png",
         "image": "https://brobekklegekontor.no/logo-og.png",
         "telephone": "+47 22 64 08 44",
-        "email": "",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Erich Mogensons vei 38, Linderud Senter plan 3",
             "addressLocality": "Oslo",
+            "addressRegion": "Bjerke bydel",
             "postalCode": "0594",
             "addressCountry": "NO"
         },
@@ -61,38 +64,53 @@
         ],
         "medicalSpecialty": "GeneralPractice",
         "availableService": [
+            {"@type": "MedicalProcedure", "name": "Allmennmedisin og fastlegekonsultasjon", "description": "Vanlig legekonsultasjon med spesialist i allmennmedisin"},
+            {"@type": "MedicalProcedure", "name": "E-konsultasjon", "description": "Digital konsultasjon via Helsenorge, trygt og enkelt hjemmefra"},
+            {"@type": "MedicalProcedure", "name": "Vaksinering", "description": "Reisevaksiner, influensavaksine og barnevaksinasjonsprogrammet"},
+            {"@type": "MedicalProcedure", "name": "Småkirurgiske inngrep", "description": "Fjerning av sting, sårbehandling og mindre kirurgiske inngrep"},
+            {"@type": "MedicalProcedure", "name": "Reseptfornyelse", "description": "Fornyelse av resepter via Helsenorge for faste medisiner"},
+            {"@type": "MedicalProcedure", "name": "Akuttimer", "description": "Akuttimer åpnes kl. 09:00 hver dag på telefon"},
+            {"@type": "MedicalProcedure", "name": "Laboratorietjenester", "description": "Blodprøver og diagnostiske undersøkelser i samarbeid med Fürst Medisinsk Laboratorium"},
+            {"@type": "MedicalProcedure", "name": "Spesialisthenvisning", "description": "Henvisning til relevante spesialister for videre utredning"}
+        ],
+        "physician": [
             {
-                "@type": "MedicalProcedure",
-                "name": "Allmennmedisin",
-                "description": "Vanlig legekonsultasjon med fastlege"
+                "@type": "Physician",
+                "name": "Atif Abbas",
+                "jobTitle": "Spesialist i allmennmedisin",
+                "medicalSpecialty": "GeneralPractice",
+                "worksFor": {"@id": "https://brobekklegekontor.no/#clinic"}
             },
             {
-                "@type": "MedicalProcedure",
-                "name": "E-konsultasjon",
-                "description": "Digital konsultasjon via Helsenorge"
-            },
-            {
-                "@type": "MedicalProcedure",
-                "name": "Vaksinering",
-                "description": "Reisevaksiner, influensavaksine og barnevaksinasjon"
-            },
-            {
-                "@type": "MedicalProcedure",
-                "name": "Småkirurgiske inngrep",
-                "description": "Fjerning av sting, sårbehandling og mindre kirurgiske inngrep"
-            },
-            {
-                "@type": "MedicalProcedure",
-                "name": "Reseptfornyelse",
-                "description": "Fornyelse av resepter via Helsenorge"
+                "@type": "Physician",
+                "name": "Faiza Abbas",
+                "jobTitle": "Spesialist i allmennmedisin",
+                "medicalSpecialty": "GeneralPractice",
+                "worksFor": {"@id": "https://brobekklegekontor.no/#clinic"}
             }
         ],
-        "sameAs": [],
-        "priceRange": "$$",
-        "areaServed": {
-            "@type": "City",
-            "name": "Oslo"
+        "containedInPlace": {
+            "@type": "Place",
+            "name": "Linderud Senter",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Erich Mogensons vei 38",
+                "addressLocality": "Oslo",
+                "postalCode": "0594"
+            }
         },
+        "areaServed": [
+            {"@type": "City", "name": "Oslo"},
+            {"@type": "AdministrativeArea", "name": "Bjerke bydel"},
+            {"@type": "Place", "name": "Linderud"},
+            {"@type": "Place", "name": "Refstad"},
+            {"@type": "Place", "name": "Vollebekk"},
+            {"@type": "Place", "name": "Økern"},
+            {"@type": "Place", "name": "Sinsen"}
+        ],
+        "knowsLanguage": ["no", "nb"],
+        "currenciesAccepted": "NOK",
+        "priceRange": "$$",
         "hasMap": "https://www.google.com/maps?q=Erich+Mogensons+vei+38,+0594+Oslo"
     }
     </script>
@@ -109,1325 +127,89 @@
         }
     }
     </script>
-    <meta name="theme-color" content="#0C2340">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Tar Brobekk Legekontor imot nye pasienter?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Vi har plass på fastlegelisten avhengig av kapasitet. Du kan se ledige plasser ved å logge inn på Helsenorge med BankID og søke etter Brobekk Legekontor i bytte-løsningen. Ta gjerne kontakt på telefon 22 64 08 44 om du har spørsmål."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hvordan bytter jeg fastlege til Brobekk Legekontor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Logg inn på helsenorge.no med BankID, velg Bytte av fastlege og søk etter Brobekk Legekontor. Du kan bytte fastlege inntil to ganger per kalenderår, og endringen er gyldig fra første dag i neste måned."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hvor ligger Brobekk Legekontor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Vi holder til på Linderud Senter, plan 3, Erich Mogensons vei 38, 0594 Oslo. Linderud Senter har 370 parkeringsplasser og er enkelt tilgjengelig med T-bane (linje 4 eller 5 til Linderud stasjon, ca. 8 min gange) eller buss (linje 25, 26, 31 eller 60 til Linderudsletta, ca. 2 min gange). Ta heisen eller rulletrappen til plan 3, så finner du oss i helseavdelingen — innerst i gangen, dør E."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hvordan bestiller jeg time hos fastlegen?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Du bestiller time enklest via Helsenorge med BankID. Logg inn, velg Brobekk Legekontor og finn en ledig tid som passer. Akuttimer åpnes kl. 09:00 hver morgen og bestilles per telefon på 22 64 08 44 — vær raskt ute, da de er populære. Grunnet stor pågang tilbyr vi dessverre ikke dobbeltime."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Kan jeg starte sykemelding via e-konsultasjon eller telefontime?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nei. Ny sykemelding krever fysisk konsultasjon fordi NAV krever observasjonsgrunnlag. E-konsultasjon og telefontime kan brukes til oppfølging av eksisterende sykemelding, men ikke til å starte en ny eller skrive fraværserklæring for skole eller forsikring. Ved forlenget sykemelding bør du bestille time samme dag eller senest dagen etter at den eksisterende går ut — NAV tillater ikke tilbakedatering."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hva koster en konsultasjon eller attest hos fastlegen?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Egenandel for vanlig konsultasjon er kr 235. Helfo dekker resten av legehonoraret for pasienter på fastlegelisten. Attester (førerkort, NAV, politihøyskolen m.m.) har egne priser basert på salærforskriften fastsatt av staten — se prislisten på pasientinfo.html for detaljer."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hvilke vaksiner tilbyr Brobekk Legekontor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Vi tilbyr influensavaksine, reisevaksiner, barnevaksinasjonsprogrammet og andre relevante vaksiner. Du kan se dine registrerte vaksiner på helsenorge.no/mine-vaksiner. For reisevaksiner anbefaler vi å bestille time i god tid før avreise — noen vaksiner krever flere doser med flere ukers mellomrom."
+                }
+            }
+        ]
+    }
+    </script>
+    <meta name="theme-color" content="#1a1815">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
-    <style>
-        /* ========================================
-           DESIGN TOKENS
-           ======================================== */
-        :root {
-            --navy: #0C2340;
-            --navy-mid: #163a5f;
-            --forest: #1B5E3B;
-            --forest-light: #247a4e;
-            --copper: #C67D4A;
-            --copper-light: #D4956A;
-            --copper-dark: #A86835;
-            --copper-glow: rgba(198, 125, 74, 0.15);
-            --cream: #FAF8F5;
-            --white: #FFFFFF;
-            --text: #1C1C1C;
-            --text-secondary: #4A5568;
-            --text-light: #8A939D;
-            --border: #E8E2DA;
-            --shadow-sm: 0 1px 4px rgba(12, 35, 64, 0.05);
-            --shadow-md: 0 4px 20px rgba(12, 35, 64, 0.07);
-            --shadow-lg: 0 12px 40px rgba(12, 35, 64, 0.1);
-            --shadow-hover: 0 8px 30px rgba(12, 35, 64, 0.12);
-            --font-heading: 'Cormorant Garamond', 'Georgia', serif;
-            --font-body: 'Outfit', system-ui, sans-serif;
-            --ease: cubic-bezier(0.4, 0, 0.2, 1);
-            --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            --radius: 12px;
-            --radius-sm: 8px;
-            --navy-deep: #081B30;
-            --copper-glow-strong: rgba(198, 125, 74, 0.3);
-            --glass: rgba(255, 255, 255, 0.72);
-            --glass-border: rgba(255, 255, 255, 0.5);
-        }
-
-        /* ========================================
-           RESET & BASE
-           ======================================== */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 88px;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--text);
-            background: var(--cream);
-            line-height: 1.7;
-            font-weight: 400;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img { max-width: 100%; display: block; }
-
-        /* Skip to content for accessibility */
-        .skip-link {
-            position: absolute;
-            top: -100%;
-            left: 16px;
-            background: var(--navy);
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: var(--radius-sm);
-            z-index: 9999;
-            font-size: 14px;
-        }
-        .skip-link:focus {
-            top: 16px;
-        }
-
-        /* ========================================
-           CONTAINER
-           ======================================== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        @media (min-width: 768px) {
-            .container { padding: 0 40px; }
-        }
-
-        /* ========================================
-           NAVIGATION
-           ======================================== */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 0;
-            transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
-        }
-
-        .nav--top {
-            background: transparent;
-        }
-
-        .nav--scrolled {
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 1px 0 var(--border), 0 0 0 0.5px rgba(198, 125, 74, 0.08);
-        }
-
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 80px;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-family: var(--font-heading);
-            font-size: 1.25rem;
-            font-weight: 600;
-            transition: color var(--transition);
-        }
-
-        .nav--top .nav-logo { color: var(--white); }
-        .nav--scrolled .nav-logo { color: var(--navy); }
-
-        .nav-logo-mark {
-            width: 44px;
-            height: 44px;
-            border-radius: 0;
-            object-fit: contain;
-            transition: transform var(--transition);
-        }
-
-        .nav-logo:hover .nav-logo-mark {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            list-style: none;
-        }
-
-        .nav-link {
-            padding: 8px 18px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.01em;
-            transition: color var(--transition), background var(--transition);
-        }
-
-        .nav--top .nav-link { color: rgba(255, 255, 255, 0.7); }
-        .nav--top .nav-link:hover,
-        .nav--top .nav-link.active { color: var(--white); background: rgba(255, 255, 255, 0.08); }
-
-        .nav--scrolled .nav-link { color: var(--text-secondary); }
-        .nav--scrolled .nav-link:hover,
-        .nav--scrolled .nav-link.active { color: var(--navy); background: rgba(12, 35, 64, 0.05); }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .nav-phone {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: color var(--transition);
-        }
-
-        .nav--top .nav-phone { color: rgba(255, 255, 255, 0.8); }
-        .nav--scrolled .nav-phone { color: var(--navy); }
-
-        .nav-phone svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .nav-phone:hover { color: var(--copper); }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        .nav-toggle span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            border-radius: 2px;
-            transition: transform var(--transition), opacity var(--transition);
-        }
-
-        .nav--top .nav-toggle span { background: var(--white); }
-        .nav--scrolled .nav-toggle span { background: var(--navy); }
-
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        /* ========================================
-           HERO
-           ======================================== */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-            background:
-                radial-gradient(ellipse at 20% 80%, rgba(27, 94, 59, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(198, 125, 74, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, #0a1e38 0%, var(--navy-deep) 100%);
-        }
-
-        /* Grain texture */
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            opacity: 0.03;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            background-size: 256px 256px;
-            pointer-events: none;
-        }
-
-        /* Floating decorative ring */
-        .hero-deco-ring {
-            position: absolute;
-            width: 520px;
-            height: 520px;
-            border-radius: 50%;
-            border: 1px solid rgba(198, 125, 74, 0.08);
-            top: 50%;
-            right: -80px;
-            transform: translateY(-50%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .hero-deco-ring::after {
-            content: '';
-            position: absolute;
-            width: 380px;
-            height: 380px;
-            border-radius: 50%;
-            border: 1px solid rgba(198, 125, 74, 0.05);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        /* Decorative thin cross */
-        .hero-deco-cross {
-            position: absolute;
-            top: 22%;
-            left: 12%;
-            width: 60px;
-            height: 60px;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.12;
-        }
-
-        .hero-deco-cross::before,
-        .hero-deco-cross::after {
-            content: '';
-            position: absolute;
-            background: var(--copper-light);
-            border-radius: 1px;
-        }
-
-        .hero-deco-cross::before {
-            width: 1px;
-            height: 100%;
-            left: 50%;
-            top: 0;
-        }
-
-        .hero-deco-cross::after {
-            width: 100%;
-            height: 1px;
-            top: 50%;
-            left: 0;
-        }
-
-        /* Decorative vertical line */
-        .hero-deco-line {
-            position: absolute;
-            bottom: 180px;
-            left: 8%;
-            width: 1px;
-            height: 80px;
-            background: linear-gradient(to bottom, transparent, rgba(198, 125, 74, 0.2), transparent);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 140px 24px 48px;
-            max-width: 760px;
-        }
-
-        .hero h1 {
-            font-family: var(--font-heading);
-            font-size: clamp(3.2rem, 8vw, 6.5rem);
-            font-weight: 400;
-            color: var(--white);
-            line-height: 1.0;
-            letter-spacing: -0.03em;
-            margin-bottom: 28px;
-        }
-
-        .hero h1 em {
-            font-style: italic;
-            color: var(--copper-light);
-        }
-
-        .hero-divider {
-            width: 48px;
-            height: 1.5px;
-            background: var(--copper);
-            margin: 0 auto 28px;
-            border-radius: 2px;
-        }
-
-        .hero-tagline {
-            font-family: var(--font-heading);
-            font-size: clamp(1.1rem, 2vw, 1.35rem);
-            font-weight: 400;
-            font-style: italic;
-            color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 0.06em;
-            margin-bottom: 20px;
-        }
-
-        .hero-tagline span {
-            color: var(--copper-light);
-        }
-
-        .hero-desc {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.55);
-            line-height: 1.85;
-            max-width: 480px;
-            margin: 0 auto 44px;
-            font-weight: 300;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .hero-info-bar {
-            display: flex;
-            gap: 32px;
-            justify-content: center;
-            margin-top: 48px;
-            flex-wrap: wrap;
-        }
-
-        .hero-info-item {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 14px 24px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(198, 125, 74, 0.12);
-            border-radius: 14px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            transition: var(--transition);
-        }
-
-        .hero-info-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(198, 125, 74, 0.25);
-        }
-
-        .hero-info-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: rgba(198, 125, 74, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .hero-info-icon svg {
-            width: 20px;
-            height: 20px;
-            stroke: var(--copper-light);
-            fill: none;
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .hero-info-text {
-            text-align: left;
-        }
-
-        .hero-info-label {
-            font-family: var(--font-heading);
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--copper-light);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 3px;
-        }
-
-        .hero-info-value {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 300;
-            line-height: 1.4;
-        }
-
-        .hero-wave {
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: 80px;
-            z-index: 3;
-        }
-
-        /* ========================================
-           BUTTONS
-           ======================================== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 15px 36px;
-            border-radius: 10px;
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            transition: all var(--transition);
-            letter-spacing: 0.03em;
-        }
-
-        .btn-primary {
-            background: var(--copper);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background: var(--copper-dark);
-            box-shadow: 0 8px 28px rgba(198, 125, 74, 0.35);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--white);
-            border: 1.5px solid rgba(255, 255, 255, 0.25);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--white);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .btn-dark {
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        .btn-dark:hover {
-            background: var(--navy-mid);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(12, 35, 64, 0.2);
-        }
-
-        /* Trust bar removed — stats now in hero */
-
-        /* ========================================
-           SECTION HEADER (reusable)
-           ======================================== */
-        .section {
-            padding: 112px 0;
-        }
-
-        .section--alt {
-            background: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Warm tint for helsenorge section */
-        #helsenorge {
-            background: linear-gradient(180deg, var(--cream) 0%, rgba(198, 125, 74, 0.02) 50%, var(--cream) 100%);
-        }
-
-        /* Refined background for services section */
-        #tjenester {
-            background: var(--white);
-            border-top: 1px solid var(--border);
-        }
-
-        #tjenester::before,
-        #tjenester::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        #tjenester::before {
-            width: 400px;
-            height: 400px;
-            background: rgba(12, 35, 64, 0.06);
-            top: -100px;
-            left: -100px;
-        }
-
-        #tjenester::after {
-            width: 350px;
-            height: 350px;
-            background: rgba(198, 125, 74, 0.06);
-            bottom: -80px;
-            right: -80px;
-        }
-
-        #tjenester > .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--copper);
-            margin-bottom: 16px;
-        }
-
-        .section-label::before,
-        .section-label::after {
-            content: '';
-            display: inline-block;
-            width: 24px;
-            height: 1px;
-            background: var(--copper);
-            border-radius: 2px;
-            opacity: 0.5;
-        }
-
-        .section-header h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
-            font-weight: 500;
-            color: var(--navy);
-            line-height: 1.12;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .section-header p {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            max-width: 520px;
-            margin: 0 auto;
-            font-weight: 300;
-            line-height: 1.7;
-        }
-
-        /* ========================================
-           HELSENORGE QUICK ACTIONS
-           ======================================== */
-        .helsenorge-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .helsenorge-card {
-            display: flex;
-            flex-direction: column;
-            padding: 40px 36px 36px;
-            background: var(--white);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--copper);
-            transition: all var(--transition);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        /* Decorative background number */
-        .helsenorge-card::after {
-            content: attr(data-step);
-            position: absolute;
-            top: -8px;
-            right: 16px;
-            font-family: var(--font-heading);
-            font-size: 7rem;
-            font-weight: 700;
-            color: rgba(12, 35, 64, 0.03);
-            line-height: 1;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .helsenorge-card > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .helsenorge-card:hover {
-            border-color: rgba(198, 125, 74, 0.2);
-            border-left-color: var(--copper);
-            box-shadow: 0 8px 32px rgba(198, 125, 74, 0.1), 0 2px 8px rgba(12, 35, 64, 0.06);
-            transform: translateY(-3px);
-        }
-
-        .helsenorge-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, var(--navy), var(--navy-mid));
-            margin-bottom: 24px;
-            color: var(--white);
-        }
-
-        .helsenorge-icon svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        .helsenorge-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 10px;
-        }
-
-        .helsenorge-card p {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            flex: 1;
-            margin-bottom: 24px;
-        }
-
-        .card-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--copper);
-            letter-spacing: 0.02em;
-        }
-
-        .card-arrow {
-            transition: transform var(--transition);
-            font-size: 1.1em;
-        }
-
-        .helsenorge-card:hover .card-arrow {
-            transform: translateX(5px);
-        }
-
-        /* ========================================
-           SERVICES
-           ======================================== */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .service-card {
-            padding: 36px 28px;
-            background: var(--cream);
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            box-shadow: 0 2px 12px rgba(12, 35, 64, 0.04);
-            transition: background var(--transition), border-color var(--transition), box-shadow var(--transition), transform var(--transition);
-            position: relative;
-            overflow: hidden;
-            cursor: default;
-        }
-
-        .service-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--copper);
-            transform: scaleX(0);
-            transition: transform var(--transition);
-        }
-
-        .service-card:hover {
-            background: var(--white);
-            border-color: rgba(198, 125, 74, 0.15);
-            box-shadow: 0 12px 40px rgba(12, 35, 64, 0.08);
-            transform: translateY(-3px);
-        }
-
-        .service-card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .service-card:focus-visible {
-            background: var(--white);
-            box-shadow: 0 12px 40px rgba(12, 35, 64, 0.08);
-            transform: translateY(-3px);
-        }
-
-        .service-card:focus-visible::after {
-            transform: scaleX(1);
-        }
-
-        /* Bento card variants */
-        .service-card--featured {
-            grid-column: span 2;
-            padding: 44px 36px;
-        }
-
-        .service-card--wide {
-            grid-column: span 3;
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            padding: 36px 40px;
-        }
-
-        .service-card--wide .service-content {
-            flex: 1;
-        }
-
-        .service-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            margin-bottom: 20px;
-            color: var(--white);
-            flex-shrink: 0;
-        }
-
-        .service-card--featured .service-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-        }
-
-        .service-card--wide .service-icon {
-            margin-bottom: 0;
-        }
-
-        .service-icon--green { background: var(--forest); }
-        .service-icon--navy { background: var(--navy); }
-        .service-icon--copper { background: var(--copper); }
-
-        .service-icon svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        .service-card--featured .service-icon svg {
-            width: 26px;
-            height: 26px;
-        }
-
-        .service-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-
-        .service-card--featured h3 {
-            font-size: 1.5rem;
-        }
-
-        .service-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-        }
-
-        /* ---- Bento Dark Variant (featured) ---- */
-        .service-card--dark {
-            background: linear-gradient(145deg, var(--navy) 0%, var(--navy-deep) 100%);
-            border-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .service-card--dark h3 {
-            color: var(--white);
-        }
-
-        .service-card--dark p {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .service-card--dark .service-icon {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .service-card--dark:hover {
-            background: linear-gradient(145deg, var(--navy-mid) 0%, var(--navy) 100%);
-            border-color: rgba(198, 125, 74, 0.2);
-            box-shadow: 0 12px 40px rgba(12, 35, 64, 0.3);
-        }
-
-        .service-card--dark::after {
-            background: var(--copper);
-        }
-
-        /* Decorative accent element for dark card */
-        .service-card--dark::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            right: -60px;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            background: rgba(198, 125, 74, 0.06);
-            pointer-events: none;
-        }
-
-        /* ---- Bento Green Variant (wide) ---- */
-        .service-card--forest {
-            background: linear-gradient(145deg, var(--forest) 0%, #164a2f 100%);
-            border-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .service-card--forest h3 {
-            color: var(--white);
-        }
-
-        .service-card--forest p {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .service-card--forest .service-icon {
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .service-card--forest:hover {
-            background: linear-gradient(145deg, var(--forest-light) 0%, var(--forest) 100%);
-            border-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 12px 40px rgba(27, 94, 59, 0.25);
-        }
-
-        .service-card--forest::after {
-            background: var(--copper);
-        }
-
-        /* ---- Bento Warm Variant ---- */
-        .service-card--warm {
-            background: linear-gradient(145deg, rgba(198, 125, 74, 0.06) 0%, rgba(198, 125, 74, 0.02) 100%);
-            border-color: rgba(198, 125, 74, 0.12);
-        }
-
-        .service-card--warm:hover {
-            background: linear-gradient(145deg, rgba(198, 125, 74, 0.1) 0%, rgba(198, 125, 74, 0.04) 100%);
-            border-color: rgba(198, 125, 74, 0.2);
-            box-shadow: 0 12px 40px rgba(198, 125, 74, 0.12);
-        }
-
-        /* ========================================
-           FOOTER
-           ======================================== */
-        .footer {
-            background: var(--navy);
-            color: var(--white);
-            padding: 72px 0 0;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 48px;
-            padding-bottom: 48px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .footer-brand-name {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-brand-mark {
-            width: 40px;
-            height: 40px;
-            border-radius: 0;
-            object-fit: contain;
-        }
-
-        .footer-brand p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.55);
-            line-height: 1.7;
-            max-width: 320px;
-        }
-
-        .footer-col h4 {
-            font-family: var(--font-heading);
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .footer-col a {
-            display: block;
-            font-size: 0.88rem;
-            color: rgba(255, 255, 255, 0.5);
-            padding: 5px 0;
-            transition: color var(--transition);
-        }
-
-        .footer-col a:hover {
-            color: var(--copper-light);
-        }
-
-        .footer-col p {
-            font-size: 0.88rem;
-            color: rgba(255, 255, 255, 0.5);
-            line-height: 1.7;
-        }
-
-        .footer-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 24px 0;
-            font-size: 0.82rem;
-            color: rgba(255, 255, 255, 0.35);
-        }
-
-        .footer-helsenorge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: rgba(255, 255, 255, 0.45);
-            transition: color var(--transition);
-        }
-
-        .footer-helsenorge:hover { color: var(--copper-light); }
-
-        /* ========================================
-           ANIMATIONS
-           ======================================== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-        .reveal-delay-4 { transition-delay: 0.35s; }
-        .reveal-delay-5 { transition-delay: 0.4s; }
-        .reveal-delay-6 { transition-delay: 0.45s; }
-
-        /* Hero entrance animations */
-        .hero-content > * {
-            opacity: 0;
-            transform: translateY(24px);
-            animation: hero-enter 0.8s var(--ease) forwards;
-        }
-
-        .hero-content > *:nth-child(1) { animation-delay: 0.2s; }
-        .hero-content > *:nth-child(2) { animation-delay: 0.35s; }
-        .hero-content > *:nth-child(3) { animation-delay: 0.5s; }
-        .hero-content > *:nth-child(4) { animation-delay: 0.6s; }
-        .hero-content > *:nth-child(5) { animation-delay: 0.7s; }
-        .hero-content > *:nth-child(6) { animation-delay: 0.85s; }
-
-        @keyframes hero-enter {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.001ms !important;
-                transition-duration: 0.001ms !important;
-            }
-            .reveal { opacity: 1; transform: none; }
-            .hero-content > * { opacity: 1; transform: none; }
-            .service-card:hover,
-            .helsenorge-card:hover {
-                transform: none;
-            }
-            #tjenester::before,
-            #tjenester::after {
-                display: none;
-            }
-            .hero-deco-ring,
-            .hero-deco-cross,
-            .hero-deco-line {
-                display: none;
-            }
-        }
-
-        /* Focus styles */
-        :focus-visible {
-            outline: 2px solid var(--copper);
-            outline-offset: 3px;
-            border-radius: 4px;
-        }
-
-        /* ========================================
-           RESPONSIVE
-           ======================================== */
-        @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .service-card--featured,
-            .service-card--wide {
-                grid-column: span 2;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 16px 24px;
-                gap: 0;
-                box-shadow: var(--shadow-md);
-                display: none;
-                border-top: 1px solid var(--border);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            /* Force readable colors in mobile menu */
-            .nav-links .nav-link {
-                color: var(--text) !important;
-                padding: 12px 16px;
-                border-radius: 8px;
-                width: 100%;
-            }
-            .nav-links .nav-link:hover,
-            .nav-links .nav-link.active {
-                background: rgba(12, 35, 64, 0.05) !important;
-                color: var(--navy) !important;
-            }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-phone span {
-                display: none;
-            }
-
-            .hero {
-                min-height: auto;
-            }
-
-            .hero-content {
-                padding: 110px 20px 36px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-info-bar {
-                flex-direction: column;
-                gap: 12px;
-                margin-top: 32px;
-                align-items: center;
-            }
-
-            .hero-info-item {
-                width: 100%;
-                max-width: 300px;
-                padding: 12px 18px;
-                gap: 12px;
-            }
-
-            .hero-info-icon {
-                width: 36px;
-                height: 36px;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 280px;
-                justify-content: center;
-            }
-
-            .hero-deco-ring,
-            .hero-deco-cross,
-            .hero-deco-line {
-                display: none;
-            }
-
-            /* Hide all icons on mobile */
-            .helsenorge-icon,
-            .service-icon {
-                display: none;
-            }
-
-            .helsenorge-grid {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .helsenorge-card {
-                padding: 16px 20px;
-                flex-direction: row;
-                align-items: center;
-                gap: 0;
-                border-radius: 10px;
-            }
-
-            .helsenorge-card::after {
-                display: none;
-            }
-
-            .helsenorge-card h3 {
-                font-size: 1.1rem;
-                margin-bottom: 0;
-            }
-
-            .helsenorge-card p {
-                display: none;
-            }
-
-            .helsenorge-card .card-link {
-                margin-left: auto;
-                white-space: nowrap;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
-            }
-            .service-card--featured,
-            .service-card--wide {
-                grid-column: span 2;
-            }
-            .service-card {
-                padding: 16px 16px;
-                border-radius: 12px;
-            }
-            .service-card--featured {
-                padding: 20px 16px;
-            }
-            .service-card--wide {
-                flex-direction: row;
-                align-items: center;
-                gap: 12px;
-                padding: 16px 16px;
-            }
-            .service-card h3 {
-                font-size: 1rem;
-                margin-bottom: 4px;
-            }
-            .service-card--featured h3 {
-                font-size: 1.1rem;
-            }
-            .service-card p {
-                font-size: 0.8rem;
-                line-height: 1.5;
-            }
-
-            .section {
-                padding: 48px 0;
-            }
-
-            .section-header {
-                margin-bottom: 28px;
-            }
-
-            .section-header h2 {
-                margin-bottom: 8px;
-            }
-
-            .section-header p {
-                font-size: 0.92rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 36px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 8px;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Skip to content -->
     <a href="#main" class="skip-link">Hopp til innhold</a>
 
     <!-- ======== NAVIGATION ======== -->
-    <nav class="nav nav--scrolled" id="nav" aria-label="Hovednavigasjon">
+    <nav class="nav nav--top" id="nav" aria-label="Hovednavigasjon">
         <div class="container">
             <div class="nav-inner">
                 <a href="#hjem" class="nav-logo">
-                    <img src="logo-96.png" alt="Brobekk Legekontor logo" class="nav-logo-mark" width="44" height="44" fetchpriority="high">
+                    <img src="logo-96.png" alt="Brobekk Legekontor — fastlege på Linderud Senter, Oslo" class="nav-logo-mark" width="36" height="36" fetchpriority="high">
                     <span>Brobekk Legekontor</span>
                 </a>
 
@@ -1435,6 +217,7 @@
                     <a href="#hjem" class="nav-link active">Hjem</a>
                     <a href="#helsenorge" class="nav-link">Helsenorge</a>
                     <a href="#tjenester" class="nav-link">Tjenester</a>
+                    <a href="#leger" class="nav-link">Leger</a>
                     <a href="kontakt.html" class="nav-link">Kontakt</a>
                     <a href="informasjon.html" class="nav-link">Informasjon</a>
                     <a href="pasientinfo.html" class="nav-link">Priser</a>
@@ -1457,47 +240,101 @@
 
     <!-- ======== HERO ======== -->
     <section id="hjem" class="hero">
-        <!-- Decorative elements -->
-        <div class="hero-deco-ring" aria-hidden="true"></div>
-        <div class="hero-deco-cross" aria-hidden="true"></div>
-        <div class="hero-deco-line" aria-hidden="true"></div>
+        <canvas id="hero-pulse" class="hero-pulse" aria-hidden="true"></canvas>
+        <div class="hero-vignette" aria-hidden="true"></div>
 
-        <div class="hero-content">
-            <h1>Brobekk<br><em>Legekontor</em></h1>
-            <div class="hero-divider"></div>
-            <p class="hero-tagline"><span>Omsorg</span> &middot; <span>Kompetanse</span> &middot; <span>Trygghet</span></p>
-            <p class="hero-desc">Helsetjenester av høyeste kvalitet i trygge og moderne omgivelser. Hos oss er du mer enn en pasient.</p>
+        <div class="hero-stage">
+            <div class="hero-text">
+                <h1>Brobekk Legekontor er din fastlege på <span class="hero-accent">Linderud Senter</span>.</h1>
+                <p class="hero-desc">Helsetjenester av høyeste kvalitet</p>
+            </div>
+
+            <svg class="hero-ekg-mobile" viewBox="0 0 900 90" preserveAspectRatio="none" aria-hidden="true">
+                <path class="hero-ekg-track" vector-effect="non-scaling-stroke" d="M0 45 H120 L135 45 L148 39 L156 19 L166 71 L176 41 L186 47 L200 45 H320 L335 45 L348 39 L356 19 L366 71 L376 41 L386 47 L400 45 H520 L535 45 L548 39 L556 19 L566 71 L576 41 L586 47 L600 45 H720 L735 45 L748 39 L756 19 L766 71 L776 41 L786 47 L800 45 H900"/>
+                <path class="hero-ekg-spark" vector-effect="non-scaling-stroke" d="M0 45 H120 L135 45 L148 39 L156 19 L166 71 L176 41 L186 47 L200 45 H320 L335 45 L348 39 L356 19 L366 71 L376 41 L386 47 L400 45 H520 L535 45 L548 39 L556 19 L566 71 L576 41 L586 47 L600 45 H720 L735 45 L748 39 L756 19 L766 71 L776 41 L786 47 L800 45 H900"/>
+            </svg>
+
+            <aside class="hero-hours" aria-label="Åpningstider og kontaktinformasjon">
+                <div class="hero-hours-row"><span class="hero-hours-k">Åpningstider</span><span class="hero-hours-v">Man – Fre · 08:00 – 15:00</span></div>
+                <div class="hero-hours-row"><span class="hero-hours-k">Telefontid</span><span class="hero-hours-v">09:00 – 11:00 · 13:00 – 14:00</span></div>
+                <div class="hero-hours-row"><span class="hero-hours-k">Adresse</span><span class="hero-hours-v">Linderud Senter · Plan 3</span></div>
+            </aside>
+
             <div class="hero-actions">
-                <a href="https://tjenester.helsenorge.no/timeavtaler" target="_blank" rel="noopener" class="btn btn-primary">Bestill time</a>
+                <a href="https://tjenester.helsenorge.no/timeavtaler" target="_blank" rel="noopener" class="btn btn-accent">
+                    Bestill time på Helsenorge
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
                 <a href="kontakt.html" class="btn btn-outline">Kontakt oss</a>
             </div>
-
-            <div class="hero-info-bar">
-                <div class="hero-info-item">
-                    <div class="hero-info-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <div class="hero-info-text">
-                        <div class="hero-info-label">Åpningstider</div>
-                        <div class="hero-info-value">Man – Fre: 08:00 – 15:00</div>
-                    </div>
-                </div>
-                <div class="hero-info-item">
-                    <div class="hero-info-icon">
-                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </div>
-                    <div class="hero-info-text">
-                        <div class="hero-info-label">Telefontid</div>
-                        <div class="hero-info-value">09:00 – 11:00 &amp; 13:00 – 14:00</div>
-                    </div>
-                </div>
-            </div>
         </div>
+    </section>
 
-
-        <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,60 C280,100 560,20 840,55 C1020,75 1280,35 1440,60 L1440,100 L0,100 Z" fill="var(--cream)"/>
-        </svg>
+    <!-- ======== TRUST MARQUEE ======== -->
+    <section class="marquee" aria-label="Våre verdier">
+        <div class="marquee-track">
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                Helsenorge-integrert
+            </span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Erfarne spesialister i allmennmedisin
+            </span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Akuttimer hver dag fra 09:00
+            </span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                E-konsultasjon &amp; videotime
+            </span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Linderud Senter · Oslo
+            </span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><path d="M9 3v7.5L4.2 18.4a1.5 1.5 0 001.3 2.1h13a1.5 1.5 0 001.3-2.1L15 10.5V3"/><path d="M8 3h8"/></svg>
+                Fürst lab-samarbeid
+            </span>
+            <span class="marquee-dot"></span>
+            <!-- duplicate for seamless loop -->
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                Helsenorge-integrert
+            </span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Erfarne spesialister i allmennmedisin
+            </span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Akuttimer hver dag fra 09:00
+            </span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                E-konsultasjon &amp; videotime
+            </span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Linderud Senter · Oslo
+            </span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">
+                <svg viewBox="0 0 24 24"><path d="M9 3v7.5L4.2 18.4a1.5 1.5 0 001.3 2.1h13a1.5 1.5 0 001.3-2.1L15 10.5V3"/><path d="M8 3h8"/></svg>
+                Fürst lab-samarbeid
+            </span>
+            <span class="marquee-dot"></span>
+        </div>
     </section>
 
     <!-- ======== MAIN ======== -->
@@ -1507,42 +344,44 @@
         <section id="helsenorge" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-label">Digitale tjenester</span>
-                    <h2>Helsenorge</h2>
-                    <p>Enkel og sikker tilgang til dine helsetjenester — døgnet rundt.</p>
+                    <h2>Alt du trenger, gjennom Helsenorge.</h2>
+                    <p>Sikker innlogging med BankID. Tilgjengelig døgnet rundt — bestill, forny og kommuniser med oss når det passer deg.</p>
                 </div>
 
                 <div class="helsenorge-grid">
                     <!-- Bestill time -->
-                    <a href="https://tjenester.helsenorge.no/timeavtaler" target="_blank" rel="noopener" class="helsenorge-card reveal reveal-delay-1" data-step="01">
+                    <a href="https://tjenester.helsenorge.no/timeavtaler" target="_blank" rel="noopener" class="helsenorge-card reveal reveal-delay-1">
+                        <span class="helsenorge-card-step">01 / 04</span>
                         <div class="helsenorge-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="3" y="4" width="18" height="18" rx="2"/>
                                 <path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
                             </svg>
                         </div>
                         <h3>Bestill time</h3>
-                        <p>Book time hos fastlegen enkelt og raskt gjennom Helsenorge. Velg tid som passer deg. Grunnet stor pågang kan vi ikke tilby dobbeltime.</p>
-                        <span class="card-link">Gå til Helsenorge <span class="card-arrow">&rarr;</span></span>
+                        <p>Book time hos fastlegen enkelt og raskt gjennom Helsenorge. Grunnet stor pågang tilbyr vi ikke dobbeltime.</p>
+                        <span class="card-link">Gå til Helsenorge <span class="card-arrow">→</span></span>
                     </a>
 
                     <!-- Forny resept -->
-                    <a href="https://tjenester.helsenorge.no/legemidler" target="_blank" rel="noopener" class="helsenorge-card reveal reveal-delay-2" data-step="02">
+                    <a href="https://tjenester.helsenorge.no/legemidler" target="_blank" rel="noopener" class="helsenorge-card reveal reveal-delay-2">
+                        <span class="helsenorge-card-step">02 / 04</span>
                         <div class="helsenorge-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/>
                                 <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
                             </svg>
                         </div>
                         <h3>Forny resept</h3>
-                        <p>Be om fornyelse av reseptbelagte medisiner uten å måtte besøke legekontoret. Gjelder kun faste medisiner, ikke behovsmedisiner/kurer eller vanedannende medikamenter.</p>
-                        <span class="card-link">Gå til Helsenorge <span class="card-arrow">&rarr;</span></span>
+                        <p>Be om fornyelse av reseptbelagte medisiner. Gjelder kun faste medisiner — ikke behovsmedisiner eller vanedannende.</p>
+                        <span class="card-link">Gå til Helsenorge <span class="card-arrow">→</span></span>
                     </a>
 
                     <!-- Min journal -->
-                    <a href="https://tjenester.helsenorge.no/meldinger/skriv-melding" target="_blank" rel="noopener" class="helsenorge-card reveal reveal-delay-3" data-step="03">
+                    <a href="https://tjenester.helsenorge.no/meldinger/skriv-melding" target="_blank" rel="noopener" class="helsenorge-card reveal reveal-delay-3">
+                        <span class="helsenorge-card-step">03 / 04</span>
                         <div class="helsenorge-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/>
                                 <rect x="8" y="2" width="8" height="4" rx="1"/>
                                 <path d="M9 14l2 2 4-4"/>
@@ -1550,21 +389,22 @@
                         </div>
                         <h3>Min helse</h3>
                         <p>Se din pasientjournal, prøvesvar og helseopplysninger samlet på ett sted.</p>
-                        <span class="card-link">Gå til Helsenorge <span class="card-arrow">&rarr;</span></span>
+                        <span class="card-link">Gå til Helsenorge <span class="card-arrow">→</span></span>
                     </a>
 
                     <!-- E-konsultasjon -->
-                    <a href="https://tjenester.helsenorge.no/e-konsultasjon" target="_blank" rel="noopener" class="helsenorge-card reveal reveal-delay-4" data-step="04">
+                    <a href="https://tjenester.helsenorge.no/e-konsultasjon" target="_blank" rel="noopener" class="helsenorge-card reveal reveal-delay-4">
+                        <span class="helsenorge-card-step">04 / 04</span>
                         <div class="helsenorge-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="3" width="20" height="14" rx="2"/>
                                 <path d="M8 21h8M12 17v4"/>
                                 <path d="M7 10l3 2 4-4"/>
                             </svg>
                         </div>
                         <h3>E-konsultasjon</h3>
-                        <p>Start en digital konsultasjon med legen din — trygt og enkelt hjemmefra. Gjelder ikke oppstart av ny sykemelding. Ikke alle problemstillinger kan løses over e-konsultasjon. Da vil lege be deg møte opp fysisk.</p>
-                        <span class="card-link">Gå til Helsenorge <span class="card-arrow">&rarr;</span></span>
+                        <p>Start en digital konsultasjon med legen din — trygt og enkelt hjemmefra. Gjelder ikke oppstart av sykemelding.</p>
+                        <span class="card-link">Gå til Helsenorge <span class="card-arrow">→</span></span>
                     </a>
                 </div>
             </div>
@@ -1574,75 +414,74 @@
         <section id="tjenester" class="section section--alt">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-label">Hva vi tilbyr</span>
-                    <h2>Våre tjenester</h2>
-                    <p>Omfattende helsetjenester levert av erfarne spesialister i moderne omgivelser.</p>
+                    <h2>Vårt fastlegetilbud.</h2>
+                    <p>Omfattende helsetjenester levert av erfarne spesialister i allmennmedisin, i moderne lokaler på Linderud Senter.</p>
                 </div>
 
                 <div class="services-grid">
-                    <!-- Allmennmedisin — Featured (2 cols) -->
+                    <!-- Allmennmedisin — Featured -->
                     <div class="service-card service-card--featured service-card--dark reveal reveal-delay-1">
-                        <div class="service-icon service-icon--navy">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="service-icon service-icon--ink">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
                             </svg>
                         </div>
                         <h3>Allmennmedisin</h3>
-                        <p>Lege Atif Abbas, spesialist allmennmedisin<br>Lege Faiza Abbas, spesialist allmennmedisin</p>
+                        <p>Lege Atif Abbas, spesialist i allmennmedisin.<br>Lege Faiza Abbas, spesialist i allmennmedisin.</p>
                     </div>
 
                     <!-- Lab -->
                     <div class="service-card reveal reveal-delay-2">
-                        <div class="service-icon service-icon--green">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="service-icon service-icon--trust">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M9 3v7.5L4.2 18.4a1.5 1.5 0 001.3 2.1h13a1.5 1.5 0 001.3-2.1L15 10.5V3"/>
                                 <path d="M8 3h8M7 15h10"/>
                             </svg>
                         </div>
-                        <h3>Laboratorietjenester</h3>
-                        <p>Moderne laboratorium for blodprøver, urinprøver og andre diagnostiske undersøkelser.</p>
+                        <h3>Laboratorie&shy;tjenester</h3>
+                        <p>Blodprøver, urinprøver og diagnostiske undersøkelser i samarbeid med Fürst.</p>
                     </div>
 
                     <!-- Småkirurgi -->
                     <div class="service-card reveal reveal-delay-3">
-                        <div class="service-icon service-icon--copper">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="service-icon service-icon--accent">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="3"/>
                                 <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
                             </svg>
                         </div>
-                        <h3>Småkirurgiske inngrep</h3>
-                        <p>Fjerning av sting og sårskift kan du få utført hos oss.</p>
+                        <h3>Småkirurgi</h3>
+                        <p>Fjerning av sting, sårbehandling og mindre kirurgiske inngrep.</p>
                     </div>
 
-                    <!-- Akuttimer -->
+                    <!-- Akuttimer (warm card) -->
                     <div class="service-card service-card--warm reveal reveal-delay-4">
-                        <div class="service-icon service-icon--green">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="service-icon service-icon--accent">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"/>
                                 <path d="M12 6v6l4 2"/>
                             </svg>
                         </div>
                         <h3>Akuttimer</h3>
-                        <p>Vi har flere akuttimer hver eneste dag. Disse åpnes kl. 09:00 og tilbys på telefon. Det anbefales å være raskt ute for å sikre seg en akuttime.</p>
+                        <p>Flere akuttimer åpnes kl. 09:00 hver dag — kun via telefon. Vær raskt ute.</p>
                     </div>
 
                     <!-- Vaksinasjon -->
                     <div class="service-card reveal reveal-delay-5">
-                        <div class="service-icon service-icon--navy">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="service-icon service-icon--ink">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M9 12l2 2 4-4"/>
-                                <path d="M12 2a10 10 0 110 20 10 10 0 010-20z"/>
+                                <circle cx="12" cy="12" r="10"/>
                             </svg>
                         </div>
                         <h3>Vaksinasjon</h3>
-                        <p>Vaksinasjonstilbud inkludert reisevaksiner og influensa.</p>
+                        <p>Reisevaksiner, influensavaksine og barnevaksinasjonsprogrammet.</p>
                     </div>
 
-                    <!-- Spesialisthenvisning — Wide (3 cols) -->
+                    <!-- Spesialisthenvisning — Wide -->
                     <div class="service-card service-card--wide service-card--forest reveal reveal-delay-6">
-                        <div class="service-icon service-icon--copper">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="service-icon service-icon--accent">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M7 17l9.2-9.2M17 17V7H7"/>
                             </svg>
                         </div>
@@ -1655,6 +494,141 @@
             </div>
         </section>
 
+        <!-- ======== DOCTORS ======== -->
+        <section id="leger" class="section">
+            <div class="container">
+                <div class="section-header section-header--left reveal">
+                    <h2>To spesialister.<br>Samme standard.</h2>
+                    <p>Atif og Faiza Abbas er begge spesialister i allmennmedisin og driver kontoret sammen — med lang erfaring, faglig dybde og en grunnleggende respekt for hver pasient.</p>
+                </div>
+
+                <div class="doctors-grid">
+                    <div class="doctor-card reveal reveal-delay-1">
+                        <div class="doctor-avatar" aria-hidden="true">AA</div>
+                        <div class="doctor-info">
+                            <span class="doctor-name">Atif Abbas</span>
+                            <span class="doctor-role">Spesialist · Allmennmedisin</span>
+                            <p class="doctor-meta">Fastlege ved Brobekk Legekontor.</p>
+                        </div>
+                    </div>
+                    <div class="doctor-card reveal reveal-delay-2">
+                        <div class="doctor-avatar" aria-hidden="true">FA</div>
+                        <div class="doctor-info">
+                            <span class="doctor-name">Faiza Abbas</span>
+                            <span class="doctor-role">Spesialist · Allmennmedisin</span>
+                            <p class="doctor-meta">Fastlege ved Brobekk Legekontor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== OM BROBEKK ======== -->
+        <section id="om" class="section section--alt">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-intro reveal">
+                        <h2 class="about-title">Om Brobekk Legekontor.</h2>
+                        <p class="about-lead">Et lokalt fastlegekontor i Bjerke bydel — for deg som bor på Linderud eller i nærområdet.</p>
+                    </div>
+                    <div class="about-text reveal reveal-delay-1">
+                        <p>Brobekk Legekontor er din fastlege på <strong>Linderud Senter</strong>, plan 3, i Bjerke bydel i Oslo. Vi tar imot pasienter fra <strong>Linderud, Refstad, Vollebekk, Økern, Sinsen</strong> og resten av Oslo, og er en stabil del av nærmiljøet på Linderud.</p>
+                        <p>Vi tilbyr et komplett spekter av allmennmedisinske tjenester — fra rutinekonsultasjoner og e-konsultasjon via Helsenorge, til vaksinering, småkirurgi og laboratorietjenester i samarbeid med Fürst Medisinsk Laboratorium.</p>
+                        <p>Hos oss møter du to spesialister i allmennmedisin: <strong>Atif og Faiza Abbas</strong>, som driver kontoret sammen. Vi er opptatt av tilgjengelighet — derfor åpner vi flere akuttimer hver dag kl. 09:00, og vi har generøs telefontid både formiddag og ettermiddag.</p>
+                        <p>Linderud Senter er enkelt å komme til med <strong>T-bane</strong> (linje 4 og 5 til Linderud stasjon) og <strong>buss</strong> (linje 25, 26, 31 og 60 til Linderudsletta). Senteret har 370 parkeringsplasser, og du finner oss innerst i gangen på plan 3, dør E.</p>
+                        <p>Trenger du fastlege i Oslo? <a href="https://tjenester.helsenorge.no/bytte-av-fastlege" target="_blank" rel="noopener">Logg inn på Helsenorge</a> for å se ledige plasser, eller <a href="kontakt.html">ta kontakt</a> for å høre om muligheten.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== FAQ ======== -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Ofte stilte spørsmål.</h2>
+                    <p>Svar på det pasienter og nye fastlege-kandidater oftest lurer på.</p>
+                </div>
+
+                <div class="faq-list reveal reveal-delay-1">
+                    <details class="faq-item">
+                        <summary class="faq-summary">
+                            Tar Brobekk Legekontor imot nye pasienter?
+                            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Vi har plass på fastlegelisten avhengig av kapasitet. Du kan se ledige plasser ved å logge inn på Helsenorge med BankID og søke etter Brobekk Legekontor i bytte-løsningen. Ta gjerne kontakt på telefon <a href="tel:22640844">22 64 08 44</a> om du har spørsmål.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-summary">
+                            Hvordan bytter jeg fastlege til Brobekk Legekontor?
+                            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Logg inn på <a href="https://www.helsenorge.no/behandlere/bytte-av-fastlege" target="_blank" rel="noopener">helsenorge.no</a> med BankID, velg <em>Bytte av fastlege</em> og søk etter <strong>Brobekk Legekontor</strong>. Du kan bytte fastlege inntil to ganger per kalenderår, og endringen er gyldig fra første dag i neste måned.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-summary">
+                            Hvor ligger Brobekk Legekontor?
+                            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Vi holder til på <strong>Linderud Senter, plan 3</strong>, Erich Mogensons vei 38, 0594 Oslo. Linderud Senter har 370 parkeringsplasser og er enkelt tilgjengelig med T-bane (linje 4 eller 5 til Linderud stasjon, ca. 8 min gange) eller buss (linje 25, 26, 31 eller 60 til Linderudsletta, ca. 2 min gange).</p>
+                            <p>Ta heisen eller rulletrappen til plan 3, så finner du oss i helseavdelingen — innerst i gangen, dør E. Se <a href="kontakt.html">kontaktsiden</a> for kart og veibeskrivelse.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-summary">
+                            Hvordan bestiller jeg time hos fastlegen?
+                            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Du bestiller time enklest via <a href="https://tjenester.helsenorge.no/timeavtaler" target="_blank" rel="noopener">Helsenorge</a> med BankID. Logg inn, velg Brobekk Legekontor og finn en ledig tid som passer.</p>
+                            <p>Akuttimer åpnes kl. 09:00 hver morgen og bestilles per telefon på <a href="tel:22640844">22 64 08 44</a> — vær raskt ute, da de er populære. Grunnet stor pågang tilbyr vi dessverre ikke dobbeltime.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-summary">
+                            Kan jeg starte sykemelding via e-konsultasjon eller telefontime?
+                            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Nei. Ny sykemelding krever fysisk konsultasjon fordi NAV krever observasjonsgrunnlag. E-konsultasjon og telefontime kan brukes til oppfølging av eksisterende sykemelding, men ikke til å starte en ny eller skrive fraværserklæring for skole eller forsikring.</p>
+                            <p>Ved forlenget sykemelding bør du bestille time samme dag eller senest dagen etter at den eksisterende går ut — NAV tillater ikke tilbakedatering.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-summary">
+                            Hva koster en konsultasjon eller attest hos fastlegen?
+                            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Egenandel for vanlig konsultasjon er <strong>kr 235</strong>. Helfo dekker resten av legehonoraret for pasienter på fastlegelisten.</p>
+                            <p>Attester (førerkort, NAV, politihøyskolen m.m.) har egne priser basert på salærforskriften fastsatt av staten. Se hele <a href="pasientinfo.html">prislisten her</a>.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-summary">
+                            Hvilke vaksiner tilbyr Brobekk Legekontor?
+                            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Vi tilbyr <strong>influensavaksine</strong>, <strong>reisevaksiner</strong>, <strong>barnevaksinasjonsprogrammet</strong> og andre relevante vaksiner. Du kan se dine registrerte vaksiner på <a href="https://helsenorge.no/vaksiner/mine-vaksiner" target="_blank" rel="noopener">helsenorge.no/mine-vaksiner</a>, og finne reisevaksinekart hos <a href="https://nhi.no/reisevaksiner" target="_blank" rel="noopener">nhi.no</a>.</p>
+                            <p>For reisevaksiner anbefaler vi å bestille time i god tid før avreise — noen vaksiner krever flere doser med flere ukers mellomrom.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- ======== FOOTER ======== -->
@@ -1663,16 +637,19 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-brand-name">
-                        <img src="logo-96.png" alt="Brobekk Legekontor logo" class="footer-brand-mark" width="36" height="36" loading="lazy">
+                        <img src="logo-96.png" alt="Brobekk Legekontor — fastlege på Linderud Senter, Oslo" class="footer-brand-mark" width="36" height="36" loading="lazy">
                         Brobekk Legekontor
                     </div>
                     <p>Din fastlege i Oslo. Vi tilbyr helsetjenester av høyeste kvalitet i trygge og moderne omgivelser.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Hurtiglenker</h4>
+                    <h4>Navigasjon</h4>
                     <a href="#hjem">Hjem</a>
                     <a href="#helsenorge">Helsenorge</a>
                     <a href="#tjenester">Tjenester</a>
+                    <a href="#leger">Leger</a>
+                    <a href="#om">Om oss</a>
+                    <a href="#faq">Ofte stilte spørsmål</a>
                     <a href="kontakt.html">Kontakt</a>
                     <a href="informasjon.html">Informasjon</a>
                     <a href="pasientinfo.html">Priser</a>
@@ -1688,10 +665,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>&copy; 2026 Brobekk Legekontor. Alle rettigheter reservert.</span>
-                <span>Nettsiden er laget av <a href="https://www.idweb.no" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.55); text-decoration: underline;">IDweb</a></span>
+                <span>© 2026 Brobekk Legekontor. Alle rettigheter reservert.</span>
+                <span>Nettsiden er laget av <a href="https://www.idweb.no" target="_blank" rel="noopener">IDweb</a></span>
                 <a href="https://www.helsenorge.no" target="_blank" rel="noopener" class="footer-helsenorge">
-                    Helsenorge.no &rarr;
+                    Helsenorge.no →
                 </a>
             </div>
         </div>
@@ -1702,8 +679,19 @@
         // ---- Navigation scroll effect ----
         const nav = document.getElementById('nav');
         const heroSection = document.querySelector('.hero');
+        const heroHeight = () => (heroSection ? heroSection.offsetHeight - 100 : 0);
 
-        // Navbar always stays solid (nav--scrolled)
+        function updateNav() {
+            if (window.scrollY > 60) {
+                nav.classList.remove('nav--top');
+                nav.classList.add('nav--scrolled');
+            } else {
+                nav.classList.add('nav--top');
+                nav.classList.remove('nav--scrolled');
+            }
+        }
+        window.addEventListener('scroll', updateNav, { passive: true });
+        updateNav();
 
         // ---- Mobile menu toggle ----
         const navToggle = document.getElementById('navToggle');
@@ -1715,7 +703,6 @@
             navToggle.setAttribute('aria-expanded', isOpen);
         });
 
-        // Close mobile menu on link click
         navLinks.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navToggle.classList.remove('active');
@@ -1725,19 +712,15 @@
         });
 
         // ---- Active nav link on scroll ----
-        const sections = document.querySelectorAll('section[id], #hjem');
+        const sections = document.querySelectorAll('main section[id], #hjem');
         const navLinkEls = document.querySelectorAll('.nav-link');
 
         function updateActiveLink() {
             const scrollPos = window.scrollY + 120;
             let currentId = 'hjem';
-
             sections.forEach(section => {
-                if (section.offsetTop <= scrollPos) {
-                    currentId = section.id;
-                }
+                if (section.offsetTop <= scrollPos) currentId = section.id;
             });
-
             navLinkEls.forEach(link => {
                 link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
             });
@@ -1752,13 +735,90 @@
                     revealObserver.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.12,
-            rootMargin: '0px 0px -40px 0px'
-        });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+        // ---- Spotlight cursor on helsenorge cards ----
+        document.querySelectorAll('.helsenorge-card').forEach(card => {
+            card.addEventListener('pointermove', (e) => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--my', `${e.clientY - rect.top}px`);
+            });
+        });
+
+        // ---- Hero heartbeat canvas (Pulse Field) ----
+        (function () {
+            const canvas = document.getElementById('hero-pulse');
+            const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const ctx = canvas && canvas.getContext && canvas.getContext('2d');
+            if (!ctx) return;
+            let w = 0, h = 0, dpr = Math.min(devicePixelRatio || 1, 2);
+            function resize() {
+                dpr = Math.min(devicePixelRatio || 1, 2);
+                w = innerWidth; h = innerHeight;
+                canvas.width = Math.floor(w * dpr); canvas.height = Math.floor(h * dpr);
+                canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                if (reduce) drawStatic();
+            }
+            function ekg(phase) {
+                const p = phase - Math.floor(phase);
+                if (p > 0.22) return 0;
+                const u = p / 0.22; let y = 0;
+                y += Math.exp(-Math.pow((u - 0.12) / 0.045, 2)) * 0.16;
+                y += -Math.exp(-Math.pow((u - 0.40) / 0.018, 2)) * 0.18;
+                y += Math.exp(-Math.pow((u - 0.47) / 0.022, 2)) * 1.00;
+                y += -Math.exp(-Math.pow((u - 0.55) / 0.030, 2)) * 0.40;
+                y += Math.exp(-Math.pow((u - 0.78) / 0.060, 2)) * 0.30;
+                return y;
+            }
+            const layers = [
+                { yFrac: 0.78, amp: 46, speed: 34, wavelen: 520, width: 1.0, color: '255,255,255', alpha: 0.05, lead: false },
+                { yFrac: 0.97, amp: 58, speed: 48, wavelen: 560, width: 1.1, color: '184,90,58', alpha: 0.10, lead: false },
+                { yFrac: 0.90, amp: 78, speed: 64, wavelen: 600, width: 1.7, color: '184,90,58', alpha: 0.55, lead: true }
+            ];
+            function drawGrid() {
+                ctx.save(); ctx.fillStyle = 'rgba(255,255,255,0.035)';
+                const gap = 34, r = 1.0;
+                for (let y = gap / 2; y < h; y += gap) for (let x = gap / 2; x < w; x += gap) { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); }
+                ctx.restore();
+            }
+            function drawTrace(L, scroll) {
+                const baseY = h * L.yFrac - (innerWidth > 900 ? 80 : 0);
+                const step = 2; ctx.save(); ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.lineWidth = L.width;
+                ctx.strokeStyle = 'rgba(' + L.color + ',' + L.alpha + ')';
+                if (L.lead) { ctx.shadowBlur = 14; ctx.shadowColor = 'rgba(184,90,58,0.5)'; }
+                ctx.beginPath();
+                for (let px = -step; px <= w + step; px += step) { const phase = (px + scroll) / L.wavelen; const y = baseY - ekg(phase) * L.amp; if (px <= -step) ctx.moveTo(px, y); else ctx.lineTo(px, y); }
+                ctx.stroke(); ctx.restore(); return baseY;
+            }
+            function pnow() { return (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now(); }
+            function drawPulse(L, scroll, baseY) {
+                const wavelen = L.wavelen; const off = 0.47 * wavelen - scroll; let bestX = null, bestDist = 1e9;
+                const t = (pnow() / 2600) % 1; const sweepX = t * (w + 200) - 100;
+                for (let n = -1; n * wavelen + off < w + wavelen; n++) { const x = n * wavelen + off; if (x < -40 || x > w + 40) continue; const d = Math.abs(x - sweepX); if (d < bestDist) { bestDist = d; bestX = x; } }
+                if (bestX === null) return;
+                const phase = (bestX + scroll) / wavelen; const y = baseY - ekg(phase) * L.amp;
+                const intensity = Math.max(0, 1 - bestDist / (wavelen * 0.5));
+                ctx.save(); ctx.lineCap = 'round'; const trailLen = 70;
+                const grad = ctx.createLinearGradient(bestX - trailLen, 0, bestX, 0);
+                grad.addColorStop(0, 'rgba(184,90,58,0)'); grad.addColorStop(1, 'rgba(255,168,120,' + (0.55 * intensity) + ')');
+                ctx.strokeStyle = grad; ctx.lineWidth = 2.4; ctx.shadowBlur = 18; ctx.shadowColor = 'rgba(184,90,58,' + (0.6 * intensity) + ')';
+                ctx.beginPath();
+                for (let px = bestX - trailLen; px <= bestX; px += 2) { const ph = (px + scroll) / wavelen; const yy = baseY - ekg(ph) * L.amp; if (px <= bestX - trailLen) ctx.moveTo(px, yy); else ctx.lineTo(px, yy); }
+                ctx.stroke();
+                ctx.shadowBlur = 26; ctx.shadowColor = 'rgba(255,150,100,' + (0.85 * intensity) + ')';
+                ctx.fillStyle = 'rgba(255,200,165,' + (0.9 * intensity + 0.1) + ')';
+                ctx.beginPath(); ctx.arc(bestX, y, 2.6, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+            }
+            let rafId = null;
+            function frame(now) { ctx.clearRect(0, 0, w, h); drawGrid(); for (const L of layers) { const scroll = (now / 1000) * L.speed; const baseY = drawTrace(L, scroll); if (L.lead) drawPulse(L, scroll, baseY); } rafId = requestAnimationFrame(frame); }
+            function drawStatic() { ctx.clearRect(0, 0, w, h); drawGrid(); drawTrace(layers[2], 0); }
+            resize(); addEventListener('resize', resize, { passive: true });
+            if (reduce) { drawStatic(); } else { rafId = requestAnimationFrame(frame); document.addEventListener('visibilitychange', function () { if (document.hidden) { if (rafId) cancelAnimationFrame(rafId); rafId = null; } else if (!rafId) { rafId = requestAnimationFrame(frame); } }); }
+        })();
     </script>
 </body>
 </html>
