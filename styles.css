@@ -772,19 +772,6 @@ img, svg { max-width: 100%; display: block; }
     isolation: isolate;
 }
 
-/* Step number — Geist Mono */
-.helsenorge-card-step {
-    position: absolute;
-    top: 24px;
-    right: 28px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--ink-5);
-    letter-spacing: 0.04em;
-    z-index: 1;
-}
-
 /* Subtle spotlight on hover */
 .helsenorge-card::before {
     content: '';
@@ -2248,7 +2235,6 @@ img, svg { max-width: 100%; display: block; }
         gap: 16px;
     }
 
-    .helsenorge-card-step { display: none; }
     .helsenorge-icon { width: 40px; height: 40px; }
     .helsenorge-icon svg { width: 18px; height: 18px; }
 
