@@ -699,7 +699,7 @@ img, svg { max-width: 100%; display: block; }
 }
 
 .section--alt {
-    background: var(--surface-1);
+    background: var(--canvas);
 }
 
 .section--dark {
@@ -974,8 +974,8 @@ img, svg { max-width: 100%; display: block; }
 
 /* Warm/sand variant — alert/akutt cards */
 .service-card--warm {
-    background: linear-gradient(160deg, var(--surface-1) 0%, var(--surface-2) 100%);
-    box-shadow: 0 0 0 1px var(--hairline), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    background: var(--canvas);
+    box-shadow: var(--lift-1);
 }
 
 .service-card--warm:hover {
@@ -1990,7 +1990,7 @@ img, svg { max-width: 100%; display: block; }
    17. FOOTER
    ============================================================ */
 .footer {
-    background: var(--surface-deep);
+    background: linear-gradient(180deg, #0A1428 0%, #0E1C3C 50%, #0A1428 100%);
     color: var(--canvas);
     padding: 80px 0 0;
     position: relative;
